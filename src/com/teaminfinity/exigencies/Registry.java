@@ -7,6 +7,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginManager;
 
+import com.teaminfinity.exigencies.api.JailAPI;
 import com.teaminfinity.exigencies.api.ParticleEffectAPI;
 import com.teaminfinity.exigencies.api.TemporaryAPI;
 import com.teaminfinity.exigencies.api.TipAPI;
@@ -14,12 +15,14 @@ import com.teaminfinity.exigencies.commands.CommandAbuse;
 import com.teaminfinity.exigencies.commands.CommandAnvil;
 import com.teaminfinity.exigencies.commands.CommandBan;
 import com.teaminfinity.exigencies.commands.CommandCheck;
+import com.teaminfinity.exigencies.commands.CommandDeljail;
 import com.teaminfinity.exigencies.commands.CommandEchest;
 import com.teaminfinity.exigencies.commands.CommandGamemode;
 import com.teaminfinity.exigencies.commands.CommandGm;
 import com.teaminfinity.exigencies.commands.CommandHeal;
 import com.teaminfinity.exigencies.commands.CommandI;
 import com.teaminfinity.exigencies.commands.CommandInvsee;
+import com.teaminfinity.exigencies.commands.CommandJail;
 import com.teaminfinity.exigencies.commands.CommandKillall;
 import com.teaminfinity.exigencies.commands.CommandLag;
 import com.teaminfinity.exigencies.commands.CommandLore;
@@ -27,6 +30,7 @@ import com.teaminfinity.exigencies.commands.CommandParticleeffect;
 import com.teaminfinity.exigencies.commands.CommandPe;
 import com.teaminfinity.exigencies.commands.CommandRename;
 import com.teaminfinity.exigencies.commands.CommandRoll;
+import com.teaminfinity.exigencies.commands.CommandSetjail;
 import com.teaminfinity.exigencies.commands.CommandSpam;
 import com.teaminfinity.exigencies.commands.CommandSpawnmob;
 import com.teaminfinity.exigencies.commands.CommandTp;
@@ -36,9 +40,9 @@ import com.teaminfinity.exigencies.enums.ConfigVal;
 import com.teaminfinity.exigencies.gui.ExigenciesGUI;
 import com.teaminfinity.exigencies.gui.GUIHandler;
 import com.teaminfinity.exigencies.listeners.ChatListener;
+import com.teaminfinity.exigencies.listeners.JailListener;
 import com.teaminfinity.exigencies.listeners.MotdListener;
 import com.teaminfinity.exigencies.listeners.PlayerListener;
-import com.teaminfinity.exigencies.listeners.PunishmentListener;
 import com.teaminfinity.exigencies.objects.command.ExigenciesCommand;
 import com.teaminfinity.exigencies.tasks.GeneralTask;
 import com.teaminfinity.exigencies.tasks.ParticleEffectTask;
@@ -53,7 +57,7 @@ public class Registry {
 			new PlayerListener(),
 			new MotdListener(),
 			new ChatListener(),
-			new PunishmentListener()
+			new JailListener()
 			}
 	;
 	
@@ -80,7 +84,10 @@ public class Registry {
 			new CommandEchest(),
 			new CommandBan(),
 			new CommandTp(),
-			new CommandTpall()
+			new CommandTpall(),
+			new CommandSetjail(),
+			new CommandDeljail(),
+			new CommandJail()
 			}
 	;
 	
@@ -131,6 +138,7 @@ public class Registry {
 		SchedulingUtility.beginRepeating(new GeneralTask(), 20);
 		TemporaryAPI.init();
 		TipAPI.init();
+		JailAPI.init();
 	}
 	
 }

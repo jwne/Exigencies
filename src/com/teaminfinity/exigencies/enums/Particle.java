@@ -114,6 +114,10 @@ public enum Particle
 		{
 			return;
 		}
+		if(player.getLocation().distance(location) > 100)
+		{
+			return;
+		}
 		try {
 			PlayerConnection connection = ((CraftPlayer)player).getHandle().playerConnection;
 			PacketPlayOutWorldParticles packet = new PacketPlayOutWorldParticles();

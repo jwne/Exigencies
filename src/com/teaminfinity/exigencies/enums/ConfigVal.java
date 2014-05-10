@@ -7,6 +7,8 @@ import org.bukkit.GameMode;
 
 public enum ConfigVal {
 	
+	JAIL_BLOCK_CHAT("JAIL.BLOCK_CHAT", true, DataType.BOOLEAN),
+	JAIL_BLOCK_COMMANDS("JAIL.BLOCK_COMMANDS", true, DataType.BOOLEAN),
 	TIPS_DELAY("TIPS.DELAY", 60, DataType.INTEGER),
 	TIPS_ENABLED("TIPS.ENABLED", false, DataType.BOOLEAN),
 	@SuppressWarnings("serial")

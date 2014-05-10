@@ -10,6 +10,17 @@ public enum MessageVal {
 	COMMAND_GAMEMODE_SUCCESS_RECIEVE("&a%SENDER% &7set your gamemode to &a%GAMEMODE%&7."),
 	COMMAND_GAMEMODE_SUCCESS_OTHER("&7You set &a%TARGET%'s &7gamemode to &a%GAMEMODE%&7."),
 	COMMAND_GAMEMODE_SUCCESS_SELF("&7You set your gamemode to &a%GAMEMODE%&7."),
+
+	COMMAND_JAIL_SUCCESS_OTHER("&cYou have been jailed!"),
+	COMMAND_JAIL_SUCCESS_SELF("&7You jailed &9%TARGET%&7."),
+	COMMAND_JAIL_NOT_FOUND("&CThat jail doesn't exist."),
+	COMMAND_JAIL_STOP("&cYou are not allowed to do that while being jailed."),
+	
+	COMMAND_DELJAIL_SUCCESS("&7You deleted the jail &9%TARGET%&7."),
+	COMMAND_DELJAIL_DOESNTEXIST("&cThat jail doesn't exist."),
+	
+	COMMAND_SETJAIL_EXISTS("&cThat jail already exists."),
+	COMMAND_SETJAIL_SUCCESS("&7You set the jail &9%TARGET%&7."),
 	
 	COMMAND_ROLL_SUCCESS_BROADCAST("&9%PLAYER% &7rolled a &a%SCORE%&7 out of &a%MAX%&7!"),
 	

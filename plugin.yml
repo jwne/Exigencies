@@ -7,6 +7,12 @@ author: Twyzl
 authors: [Twyzl, GalaxyWolff]
 softdepend: [GroupManager, PermissionsEx]
 commands:
+  jail:
+    description: command used for jailing players
+  deljail:
+    description: command used for deleting jails
+  setjail:
+    description: command used for setting jails
   tpall:
     description: command used for teleporting all players to you
   tp:

@@ -17,6 +17,11 @@ public abstract class FileAPI {
 		return new Files(new File(Core.instance.getDataFolder() + "/plugindata/edit/with/caution"), "temporarydatabase");
 	}
 
+	public static Files getJailFile(String name)
+	{
+		return new Files(getJailFileDir(), name.toLowerCase());
+	}
+	
 	public static Files getFileForPlayer(String fileName)
 	{
 		return new Files(getPlayerFileDir(), fileName.replaceAll(".yml", ""));
@@ -32,9 +37,19 @@ public abstract class FileAPI {
 		return new Files(new File(Core.instance.getDataFolder() + "/plugindata/edit/with/caution"), "particleeffectdata");
 	}
 	
+	public static Files getJailedUserFile()
+	{
+		return new Files(Core.instance.getDataFolder(), "jailedusers");
+	}
+	
 	public static File getPlayerFileDir()
 	{
 		return new File(Core.instance.getDataFolder() + "/players");
+	}
+	
+	public static File getJailFileDir()
+	{
+		return new File(Core.instance.getDataFolder() + "/jails");
 	}
 	
 	public static Files getFileForPlayer(Player player)
