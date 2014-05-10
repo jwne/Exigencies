@@ -1,0 +1,54 @@
+name: Exigencies
+main: com.teaminfinity.exigencies.Core
+version: 1.4.0
+description: >
+             by Twyzl
+author: Twyzl
+authors: [Twyzl, GalaxyWolff]
+softdepend: [GroupManager, PermissionsEx]
+commands:
+  tpall:
+    description: command used for teleporting all players to you
+  tp:
+    description: command used for teleporting players
+  ban:
+    description: command used for banning players
+  echest:
+    description: command used for checking player enderchest
+  invsee:
+    description: command used for checking player inventories
+  check:
+    description: command used for checking associated players
+  roll:
+    description: command used for generating random numbers
+  killall:
+    description: command used for killing all mobs
+  i:
+    description: command used for getting items
+  pe:
+    description: command used for having a particle effect
+  spawnmob:
+    description: command used for spawning mobs
+  abuse:
+    description: command used for having some fun
+  lag:
+    description: command used for viewing server data
+  whois:
+    description: command used for viewing player data
+  lore:
+    description: command used for adding lore to items
+  rename:
+    description: command used for renaming items
+  spam:
+    description: command used for showing text
+  particleeffect:
+    description: command used for having a particle effect
+  heal:
+    description: command used for healing players
+  anvil:
+    description: command used for viewing an anvil
+  gamemode:
+    description: command used for changing gamemodes
+  gm:
+    description: command used for changing gamemodes
+                    
