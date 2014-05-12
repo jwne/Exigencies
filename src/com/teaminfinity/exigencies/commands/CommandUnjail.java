@@ -10,12 +10,11 @@ import com.teaminfinity.exigencies.api.PlayerAPI;
 import com.teaminfinity.exigencies.enums.Cmd;
 import com.teaminfinity.exigencies.enums.MessageVal;
 import com.teaminfinity.exigencies.objects.command.ExigenciesCommand;
-import com.teaminfinity.exigencies.objects.command.JailObject;
 
-public class CommandJail extends ExigenciesCommand implements CommandExecutor {
+public class CommandUnjail extends ExigenciesCommand implements CommandExecutor {
 
-	public CommandJail() {
-		super("Jail", Cmd.COMMAND_JAIL);
+	public CommandUnjail() {
+		super("Unjail", Cmd.COMMAND_UNJAIL);
 	}
 
 	@Override
@@ -27,7 +26,7 @@ public class CommandJail extends ExigenciesCommand implements CommandExecutor {
 			return false;
 		}
 		
-		if(args.length < 2)
+		if(args.length < 1)
 		{
 			sender.sendMessage(super.getCommandExample().usage);
 			return false;
@@ -40,23 +39,17 @@ public class CommandJail extends ExigenciesCommand implements CommandExecutor {
 			return false;
 		}
 		
-		JailObject jail = JailAPI.get(args[1]);
-		if(jail == null)
+		if(!(JailAPI.isJailed(target.getUniqueId())))
 		{
-			sender.sendMessage(MessageVal.COMMAND_JAIL_NOT_FOUND.getValue());
+			sender.sendMessage(MessageVal.COMMAND_UNJAIL_UNJAILED.getValue());
 			return false;
 		}
 		
-		if(JailAPI.isJailed(target.getUniqueId()))
-		{
-			sender.sendMessage(MessageVal.COMMAND_JAIL_ALREADY.getValue());
-			return false;
-		}
-		
-		JailAPI.jailUser(target.getUniqueId(), jail.getName());
-		target.teleport(jail.getLoc());
-		sender.sendMessage(MessageAPI.getReformat(MessageVal.COMMAND_JAIL_SUCCESS_SELF, PlayerAPI.getName(target)));
-		target.sendMessage(MessageVal.COMMAND_JAIL_SUCCESS_OTHER.getValue());
+		JailAPI.unjail(target.getUniqueId());
+		target.sendMessage(MessageAPI.getReformat(MessageVal.COMMAND_UNJAIL_SUCCESS_OTHER,
+				PlayerAPI.getName(sender)));
+		sender.sendMessage(MessageAPI.getReformat(MessageVal.COMMAND_UNJAIL_SUCCESS_SELF, 
+				PlayerAPI.getName(target)));
 		
 		return false;
 	}

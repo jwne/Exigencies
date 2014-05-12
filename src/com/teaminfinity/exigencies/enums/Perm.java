@@ -6,6 +6,8 @@ public enum Perm {
 
 	ALL("exigencies.*"),
 
+	COMMAND_JAILS("exigencies.jails"),
+	COMMAND_UNJAIL("exigencies.unjail"),
 	COMMAND_JAIL("exigencies.jail"),
 	COMMAND_DELJAIL("exigencies.deljail"),
 	COMMAND_SETJAIL("exigencies.setjail"),

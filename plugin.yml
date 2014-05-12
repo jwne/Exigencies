@@ -1,12 +1,16 @@
 name: Exigencies
 main: com.teaminfinity.exigencies.Core
-version: 1.4.0
+version: 1.4.1
 description: >
              by Twyzl
 author: Twyzl
 authors: [Twyzl, GalaxyWolff]
 softdepend: [GroupManager, PermissionsEx]
 commands:
+  jails:
+    description: command used for enlisting jails
+  unjail:
+    description: command used for unjailing players
   jail:
     description: command used for jailing players
   deljail:

@@ -5,6 +5,8 @@ import org.bukkit.command.CommandSender;
 
 public enum Cmd {
 
+	COMMAND_JAILS(Perm.COMMAND_JAILS, ChatColor.RED + "Please try: '/Jails'"),
+	COMMAND_UNJAIL(Perm.COMMAND_UNJAIL, ChatColor.RED + "Please try: '/Unjail <Player>'"),
 	COMMAND_JAIL(Perm.COMMAND_JAIL, ChatColor.RED + "Please try: '/Jail <Player> <Jail>'"),
 	COMMAND_DELJAIL(Perm.COMMAND_DELJAIL, ChatColor.RED + "Please try: '/Deljail <Name>'"),
 	COMMAND_SETJAIL(Perm.COMMAND_SETJAIL, ChatColor.RED + "Please try: '/Setjail <Name>'"),

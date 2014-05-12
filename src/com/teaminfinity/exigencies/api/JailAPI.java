@@ -23,6 +23,51 @@ public abstract class JailAPI {
 		return jailedUsers.entrySet();
 	}
 	
+	public static void unjailAll(String name)
+	{
+		Files file = FileAPI.getJailedUserFile();
+		file.loadFile();
+		List<String> remove = new ArrayList<>();
+		List<String> jails = file.getStringList("list");
+		for(String str : jails)
+		{
+			if(str.toLowerCase().contains(name.toLowerCase()))
+			{
+				remove.add(str);
+			}
+		}
+		
+		for(String str : remove)
+		{
+			jails.remove(str);
+			jailedUsers.remove(UUID.fromString(str.split(":")[0]));
+			file.set("list", jails);
+			file.saveFile();
+		}
+	}
+		
+	public static void unjail(UUID user)
+	{
+		Files file = FileAPI.getJailedUserFile();
+		file.loadFile();
+		String toRemove = null;
+		List<String> jails = file.getStringList("list");
+		for(String str : jails)
+		{
+			if(str.contains(user.toString()))
+			{
+				toRemove = str;
+			}
+		}
+		if(toRemove != null)
+		{
+			jails.remove(toRemove);
+			file.set("list", jails);
+			file.saveFile();
+		}
+		jailedUsers.remove(user);
+	}
+	
 	public static void jailUser(UUID user, String name)
 	{
 		jailedUsers.put(user, name);

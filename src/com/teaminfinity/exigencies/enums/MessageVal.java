@@ -11,10 +11,17 @@ public enum MessageVal {
 	COMMAND_GAMEMODE_SUCCESS_OTHER("&7You set &a%TARGET%'s &7gamemode to &a%GAMEMODE%&7."),
 	COMMAND_GAMEMODE_SUCCESS_SELF("&7You set your gamemode to &a%GAMEMODE%&7."),
 
+	COMMAND_JAILS_PREFIX("&7Jails: "),
+	
+	COMMAND_UNJAIL_UNJAILED("&cThat player is not jailed."),
+	COMMAND_UNJAIL_SUCCESS_SELF("&7You have unjailed &9%TARGET%&7."),
+	COMMAND_UNJAIL_SUCCESS_OTHER("&7You have been unjailed by &9%TARGET%&7."),
+	
 	COMMAND_JAIL_SUCCESS_OTHER("&cYou have been jailed!"),
 	COMMAND_JAIL_SUCCESS_SELF("&7You jailed &9%TARGET%&7."),
 	COMMAND_JAIL_NOT_FOUND("&CThat jail doesn't exist."),
 	COMMAND_JAIL_STOP("&cYou are not allowed to do that while being jailed."),
+	COMMAND_JAIL_ALREADY("&cThat player is already jailed."),
 	
 	COMMAND_DELJAIL_SUCCESS("&7You deleted the jail &9%TARGET%&7."),
 	COMMAND_DELJAIL_DOESNTEXIST("&cThat jail doesn't exist."),

@@ -6,14 +6,23 @@ import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerRespawnEvent;
+import org.bukkit.event.player.PlayerTeleportEvent;
+import org.bukkit.event.player.PlayerTeleportEvent.TeleportCause;
 
 import com.teaminfinity.exigencies.api.JailAPI;
 import com.teaminfinity.exigencies.enums.ConfigVal;
 import com.teaminfinity.exigencies.enums.MessageVal;
+import com.teaminfinity.exigencies.objects.events.JailDeleteEvent;
 import com.teaminfinity.exigencies.utils.SchedulingUtility;
 
 public class JailListener implements Listener {
 
+	@EventHandler
+	public void onJailDelete(JailDeleteEvent e)
+	{
+		JailAPI.unjailAll(e.getName());
+	}
+	
 	@EventHandler
 	public void onAsyncPlayerChat(AsyncPlayerChatEvent e)
 	{
@@ -47,6 +56,30 @@ public class JailListener implements Listener {
 	{
 		if(JailAPI.isJailed(e.getPlayer().getUniqueId()))
 		{
+			SchedulingUtility.run(new Runnable()
+			{
+				@Override
+				public void run()
+				{
+					e.getPlayer().teleport(JailAPI.getJail(e.getPlayer().getUniqueId()).getLoc());
+				}
+			}
+			, 3);
+		}
+	}
+	
+	@EventHandler
+	public void onPlayerTelport(final PlayerTeleportEvent e)
+	{
+		if(JailAPI.isJailed(e.getPlayer().getUniqueId()))
+		{
+			if(e.getCause().equals(TeleportCause.PLUGIN) ||
+					e.getCause().equals(TeleportCause.COMMAND) ||
+					e.getCause().equals(TeleportCause.UNKNOWN))
+			{
+				return;
+			}
+			
 			SchedulingUtility.run(new Runnable()
 			{
 				@Override

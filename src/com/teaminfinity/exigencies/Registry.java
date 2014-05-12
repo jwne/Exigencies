@@ -23,6 +23,7 @@ import com.teaminfinity.exigencies.commands.CommandHeal;
 import com.teaminfinity.exigencies.commands.CommandI;
 import com.teaminfinity.exigencies.commands.CommandInvsee;
 import com.teaminfinity.exigencies.commands.CommandJail;
+import com.teaminfinity.exigencies.commands.CommandJails;
 import com.teaminfinity.exigencies.commands.CommandKillall;
 import com.teaminfinity.exigencies.commands.CommandLag;
 import com.teaminfinity.exigencies.commands.CommandLore;
@@ -35,6 +36,7 @@ import com.teaminfinity.exigencies.commands.CommandSpam;
 import com.teaminfinity.exigencies.commands.CommandSpawnmob;
 import com.teaminfinity.exigencies.commands.CommandTp;
 import com.teaminfinity.exigencies.commands.CommandTpall;
+import com.teaminfinity.exigencies.commands.CommandUnjail;
 import com.teaminfinity.exigencies.commands.CommandWhois;
 import com.teaminfinity.exigencies.enums.ConfigVal;
 import com.teaminfinity.exigencies.gui.ExigenciesGUI;
@@ -57,7 +59,7 @@ public class Registry {
 			new PlayerListener(),
 			new MotdListener(),
 			new ChatListener(),
-			new JailListener()
+			new JailListener(),
 			}
 	;
 	
@@ -87,7 +89,9 @@ public class Registry {
 			new CommandTpall(),
 			new CommandSetjail(),
 			new CommandDeljail(),
-			new CommandJail()
+			new CommandJail(),
+			new CommandUnjail(),
+			new CommandJails()
 			}
 	;
 	
