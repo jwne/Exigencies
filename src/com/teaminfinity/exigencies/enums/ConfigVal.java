@@ -3,10 +3,18 @@ package com.teaminfinity.exigencies.enums;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
+
+import com.teaminfinity.exigencies.api.PersistenceAPI;
+import com.teaminfinity.exigencies.utils.ConfigHandler;
 
 public enum ConfigVal {
 	
+	SPAWN_DELAY("SPAWN_DELAY", 5, DataType.INTEGER),
+	SPAWN_LOCATION("SPAWN_LOCATION", PersistenceAPI.getLocation()
+			.toStringValue(Bukkit.getWorlds().get(0).getSpawnLocation()),
+			DataType.STRING),
 	JAIL_BLOCK_CHAT("JAIL.BLOCK_CHAT", true, DataType.BOOLEAN),
 	JAIL_BLOCK_COMMANDS("JAIL.BLOCK_COMMANDS", true, DataType.BOOLEAN),
 	TIPS_DELAY("TIPS.DELAY", 60, DataType.INTEGER),
@@ -46,6 +54,11 @@ public enum ConfigVal {
 	public final String key;
 	private Object value;
 	public final DataType type;
+	
+	public void saveValue()
+	{
+		new ConfigHandler().saveValue(this);
+	}
 	
 	ConfigVal(String key, Object value, DataType type)
 	{
@@ -96,6 +109,11 @@ public enum ConfigVal {
 
 	public void setValue(Object value) {
 		this.value = value;
+	}
+	
+	public static void saveValues()
+	{
+		new ConfigHandler().regenerateConfig();
 	}
 	
 }

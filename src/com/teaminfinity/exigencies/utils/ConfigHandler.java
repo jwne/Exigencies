@@ -10,6 +10,12 @@ public class ConfigHandler {
 
 	public static Files configFile = null;
 	
+	public void saveValue(ConfigVal val)
+	{
+		configFile.set(val.key, val.getValue());
+		configFile.saveFile();
+	}
+	
 	public ConfigHandler()
 	{
 		if(configFile == null)
@@ -19,11 +25,10 @@ public class ConfigHandler {
 			{
 				regenerateConfig();
 			}
-			loadAllValues();
 		}
 	}
 	
-	private void regenerateConfig()
+	public void regenerateConfig()
 	{
 		if(configFile.fileExists())
 		{
@@ -38,7 +43,7 @@ public class ConfigHandler {
 		configFile.saveFile();
 	}
 	
-	private void loadAllValues()
+	public void loadAllValues()
 	{
 		configFile.loadFile();
 		try

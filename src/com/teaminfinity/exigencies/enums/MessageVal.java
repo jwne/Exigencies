@@ -11,6 +11,11 @@ public enum MessageVal {
 	COMMAND_GAMEMODE_SUCCESS_OTHER("&7You set &a%TARGET%'s &7gamemode to &a%GAMEMODE%&7."),
 	COMMAND_GAMEMODE_SUCCESS_SELF("&7You set your gamemode to &a%GAMEMODE%&7."),
 
+	COMMAND_SPAWN_SUCCESS_WAITING("&7You will teleport to &9spawn &7in &a%TARGET%&7 seconds."),
+	COMMAND_SPAWN_SUCCESS_SELF("&7You teleported to &9spawn&7."),
+	
+	COMMAND_SETSPAWN_SUCCESS_SELF("&7You set the spawn."),
+	
 	COMMAND_JAILS_PREFIX("&7Jails: "),
 	
 	COMMAND_UNJAIL_UNJAILED("&cThat player is not jailed."),
@@ -98,6 +103,9 @@ public enum MessageVal {
 	COLOR_PRIMARY("&7"),
 	COLOR_SECONDARY("&9"),
 	COLOR_TERTIARY("&a"),
+	
+	MOVEMENT_STOPPER_TELEPORT_UPDATE("&7Teleporting in &a%TARGET%&7."),
+	MOVEMENT_STOPPER_TELEPORT("&cTeleportation cancelled."),
 	
 	/**
 	 * Listener-type

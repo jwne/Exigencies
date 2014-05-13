@@ -7,6 +7,10 @@ author: Twyzl
 authors: [Twyzl, GalaxyWolff]
 softdepend: [GroupManager, PermissionsEx]
 commands:
+  spawn:
+    description: command used for teleporting to spawn
+  setspawn:
+    description: command used for setting a spawnpoint
   jails:
     description: command used for enlisting jails
   unjail:

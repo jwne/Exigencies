@@ -6,6 +6,9 @@ public enum Perm {
 
 	ALL("exigencies.*"),
 
+	COMMAND_SPAWN_INSTANT("exigencies.spawn.instant"),
+	COMMAND_SPAWN("exigencies.spawn"),
+	COMMAND_SETSPAWN("exigencies.setspawn"),
 	COMMAND_JAILS("exigencies.jails"),
 	COMMAND_UNJAIL("exigencies.unjail"),
 	COMMAND_JAIL("exigencies.jail"),

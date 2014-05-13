@@ -32,7 +32,9 @@ import com.teaminfinity.exigencies.commands.CommandPe;
 import com.teaminfinity.exigencies.commands.CommandRename;
 import com.teaminfinity.exigencies.commands.CommandRoll;
 import com.teaminfinity.exigencies.commands.CommandSetjail;
+import com.teaminfinity.exigencies.commands.CommandSetspawn;
 import com.teaminfinity.exigencies.commands.CommandSpam;
+import com.teaminfinity.exigencies.commands.CommandSpawn;
 import com.teaminfinity.exigencies.commands.CommandSpawnmob;
 import com.teaminfinity.exigencies.commands.CommandTp;
 import com.teaminfinity.exigencies.commands.CommandTpall;
@@ -45,6 +47,7 @@ import com.teaminfinity.exigencies.listeners.ChatListener;
 import com.teaminfinity.exigencies.listeners.JailListener;
 import com.teaminfinity.exigencies.listeners.MotdListener;
 import com.teaminfinity.exigencies.listeners.PlayerListener;
+import com.teaminfinity.exigencies.objects.MovementStopper;
 import com.teaminfinity.exigencies.objects.command.ExigenciesCommand;
 import com.teaminfinity.exigencies.tasks.GeneralTask;
 import com.teaminfinity.exigencies.tasks.ParticleEffectTask;
@@ -60,6 +63,7 @@ public class Registry {
 			new MotdListener(),
 			new ChatListener(),
 			new JailListener(),
+			new MovementStopper()
 			}
 	;
 	
@@ -91,13 +95,15 @@ public class Registry {
 			new CommandDeljail(),
 			new CommandJail(),
 			new CommandUnjail(),
-			new CommandJails()
+			new CommandJails(),
+			new CommandSetspawn(),
+			new CommandSpawn()
 			}
 	;
 	
 	public Registry()
 	{
-		new ConfigHandler();
+		new ConfigHandler().loadAllValues();;
 		new MessageHandler();
 		
 		PluginManager pm = Bukkit.getPluginManager();
@@ -128,6 +134,10 @@ public class Registry {
 		for(ExigenciesCommand cmd : commands)
 		{
 			Core.instance.getCommand(cmd.getAlias()).setExecutor((CommandExecutor) cmd);
+			if(cmd instanceof Listener)
+			{
+				pm.registerEvents((Listener) cmd, Core.instance);
+			}
 		}
 		
 		
@@ -139,7 +149,7 @@ public class Registry {
 					.getIntegerValue());
 		}
 		
-		SchedulingUtility.beginRepeating(new GeneralTask(), 20);
+		SchedulingUtility.beginRepeating(new GeneralTask(20), 20);
 		TemporaryAPI.init();
 		TipAPI.init();
 		JailAPI.init();
