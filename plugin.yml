@@ -7,6 +7,8 @@ author: Twyzl
 authors: [Twyzl, GalaxyWolff]
 softdepend: [GroupManager, PermissionsEx]
 commands:
+  sheepcannon:
+    description: command used for booming!
   spawn:
     description: command used for teleporting to spawn
   setspawn:

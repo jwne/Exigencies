@@ -3,6 +3,8 @@ package com.teaminfinity.exigencies.listeners;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.SignChangeEvent;
+import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.AsyncPlayerPreLoginEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 
@@ -76,5 +78,33 @@ public class PlayerListener implements Listener {
 					UUIDManagementType.BOTH);
 		}
 	}
+	
+	public static class ColorListener implements Listener {
+		
+		@EventHandler
+		public void onAsyncPlayerChat(AsyncPlayerChatEvent e)
+		{
+			if(Perm.COLOR_CHAT.hasPermission(e.getPlayer()))
+			{
+				e.setMessage(MessageAPI.addColour(e.getMessage()));
+			}
+		}
+		
+	    @EventHandler
+	    public void onSignChange(SignChangeEvent e)
+	    {
+	    	if(Perm.COLOR_SIGN.hasPermission(e.getPlayer()))
+	    	{
+	    		int index = 0;
+	    		for(String str : e.getLines())
+	    		{
+	    			e.setLine(index, MessageAPI.addColour(str));
+	    			index++;
+	    		}
+	    	}
+	    }
+		
+	}
+	
 	
 }

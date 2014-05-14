@@ -6,6 +6,10 @@ public enum Perm {
 
 	ALL("exigencies.*"),
 
+	COLOR_SIGN("exigencies.color.sign"),
+	COLOR_CHAT("exigencies.color.chat"),
+	
+	COMMAND_SHEEPCANNON("exigencies.sheepcannon"),
 	COMMAND_SPAWN_INSTANT("exigencies.spawn.instant"),
 	COMMAND_SPAWN("exigencies.spawn"),
 	COMMAND_SETSPAWN("exigencies.setspawn"),

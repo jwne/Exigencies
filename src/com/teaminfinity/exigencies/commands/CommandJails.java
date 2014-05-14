@@ -35,6 +35,12 @@ public class CommandJails extends ExigenciesCommand implements CommandExecutor {
 			jails.add(jail.getName());
 		}
 		
+		if(jails.size() == 0)
+		{
+			sender.sendMessage(MessageVal.COMMAND_JAILS_EMPTY.getValue());
+			return false;
+		}
+		
 		sender.sendMessage(MessageVal.COMMAND_JAILS_PREFIX.getValue() + MessageAPI.toString(jails));
 		
 		return false;

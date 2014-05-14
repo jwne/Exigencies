@@ -6,6 +6,7 @@ import java.util.UUID;
 import org.bukkit.entity.Player;
 
 import com.teaminfinity.exigencies.Core;
+import com.teaminfinity.exigencies.enums.LogType;
 import com.teaminfinity.exigencies.utils.Files;
 
 public abstract class FileAPI {
@@ -20,6 +21,16 @@ public abstract class FileAPI {
 	public static Files getJailFile(String name)
 	{
 		return new Files(getJailFileDir(), name.toLowerCase());
+	}
+	
+	public static Files getLogFile(LogType type)
+	{
+		return new Files(getLogFileDir(), type.toString().toLowerCase());
+	}
+	
+	public static File getLogFileDir()
+	{
+		return new File(Core.instance.getDataFolder() + "/logs");
 	}
 	
 	public static Files getFileForPlayer(String fileName)

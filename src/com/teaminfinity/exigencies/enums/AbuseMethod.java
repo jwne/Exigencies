@@ -3,26 +3,26 @@ package com.teaminfinity.exigencies.enums;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 
-import com.teaminfinity.exigencies.objects.abuse.AbuseTechnique;
-import com.teaminfinity.exigencies.objects.abuse.AnvilKiller;
-import com.teaminfinity.exigencies.objects.abuse.ChatEmbarrassing;
-import com.teaminfinity.exigencies.objects.abuse.ChatHacker;
-import com.teaminfinity.exigencies.objects.abuse.ChatJustinBieber;
-import com.teaminfinity.exigencies.objects.abuse.Confuser;
-import com.teaminfinity.exigencies.objects.abuse.Crasher;
-import com.teaminfinity.exigencies.objects.abuse.Detonator;
-import com.teaminfinity.exigencies.objects.abuse.EnderchestWiper;
-import com.teaminfinity.exigencies.objects.abuse.HackedClientBanner;
-import com.teaminfinity.exigencies.objects.abuse.InventoryWiper;
-import com.teaminfinity.exigencies.objects.abuse.LevelReseter;
-import com.teaminfinity.exigencies.objects.abuse.Murderer;
-import com.teaminfinity.exigencies.objects.abuse.Poison;
-import com.teaminfinity.exigencies.objects.abuse.PotatoSpammer;
-import com.teaminfinity.exigencies.objects.abuse.Pyromaniac;
-import com.teaminfinity.exigencies.objects.abuse.Rocketer;
-import com.teaminfinity.exigencies.objects.abuse.SoundAnnoyer;
-import com.teaminfinity.exigencies.objects.abuse.TortureWiper;
-import com.teaminfinity.exigencies.objects.abuse.Witherer;
+import com.teaminfinity.exigencies.objects.fun.AbuseTechnique;
+import com.teaminfinity.exigencies.objects.fun.AnvilKiller;
+import com.teaminfinity.exigencies.objects.fun.ChatEmbarrassing;
+import com.teaminfinity.exigencies.objects.fun.ChatHacker;
+import com.teaminfinity.exigencies.objects.fun.ChatJustinBieber;
+import com.teaminfinity.exigencies.objects.fun.Confuser;
+import com.teaminfinity.exigencies.objects.fun.Crasher;
+import com.teaminfinity.exigencies.objects.fun.Detonator;
+import com.teaminfinity.exigencies.objects.fun.EnderchestWiper;
+import com.teaminfinity.exigencies.objects.fun.HackedClientBanner;
+import com.teaminfinity.exigencies.objects.fun.InventoryWiper;
+import com.teaminfinity.exigencies.objects.fun.LevelReseter;
+import com.teaminfinity.exigencies.objects.fun.Murderer;
+import com.teaminfinity.exigencies.objects.fun.Poison;
+import com.teaminfinity.exigencies.objects.fun.PotatoSpammer;
+import com.teaminfinity.exigencies.objects.fun.Pyromaniac;
+import com.teaminfinity.exigencies.objects.fun.Rocketer;
+import com.teaminfinity.exigencies.objects.fun.SoundAnnoyer;
+import com.teaminfinity.exigencies.objects.fun.TortureWiper;
+import com.teaminfinity.exigencies.objects.fun.Witherer;
 
 public enum AbuseMethod {
 

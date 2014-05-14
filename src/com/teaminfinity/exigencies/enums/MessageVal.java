@@ -6,16 +6,17 @@ public enum MessageVal {
 	 * Command
 	 * variables.
 	 */
-	COMMAND_GAMEMODE_SUCCESS_EVERYBODY("&7You set &aeverybody's &7gamemode to &a%GAMEMODE%&7."),
-	COMMAND_GAMEMODE_SUCCESS_RECIEVE("&a%SENDER% &7set your gamemode to &a%GAMEMODE%&7."),
-	COMMAND_GAMEMODE_SUCCESS_OTHER("&7You set &a%TARGET%'s &7gamemode to &a%GAMEMODE%&7."),
-	COMMAND_GAMEMODE_SUCCESS_SELF("&7You set your gamemode to &a%GAMEMODE%&7."),
+	COMMAND_GAMEMODE_SUCCESS_EVERYBODY("&7You set &aeverybody's &7gamemode to &9%GAMEMODE%&7."),
+	COMMAND_GAMEMODE_SUCCESS_RECIEVE("&a%SENDER% &7set your gamemode to &9%GAMEMODE%&7."),
+	COMMAND_GAMEMODE_SUCCESS_OTHER("&7You set &9%TARGET%'s &7gamemode to &9%GAMEMODE%&7."),
+	COMMAND_GAMEMODE_SUCCESS_SELF("&7You set your gamemode to &9%GAMEMODE%&7."),
 
-	COMMAND_SPAWN_SUCCESS_WAITING("&7You will teleport to &9spawn &7in &a%TARGET%&7 seconds."),
+	COMMAND_SPAWN_SUCCESS_WAITING("&7You will teleport to &9spawn &7in &9%TARGET%&7 seconds."),
 	COMMAND_SPAWN_SUCCESS_SELF("&7You teleported to &9spawn&7."),
 	
 	COMMAND_SETSPAWN_SUCCESS_SELF("&7You set the spawn."),
 	
+	COMMAND_JAILS_EMPTY("&7There are no jails."),
 	COMMAND_JAILS_PREFIX("&7Jails: "),
 	
 	COMMAND_UNJAIL_UNJAILED("&cThat player is not jailed."),
@@ -38,7 +39,7 @@ public enum MessageVal {
 	
 	COMMAND_I_SUCCESS_SELF("&7You gave yourself &a%AMOUNT%&7 of &9%TYPE%&7."),
 	
-	COMMAND_KILLALL_SUCCESS_SELF("&7You removed &a%TARGET% &7creatures."),
+	COMMAND_KILLALL_SUCCESS_SELF("&7You removed &9%TARGET% &7creatures."),
 	
 	COMMAND_RENAME_NEED_ITEM("&cYou need an item in your hand to rename!"),
 	COMMAND_RENAME_SUCCESS("&7Name applied to item."),
@@ -54,13 +55,13 @@ public enum MessageVal {
 	
 	COMMAND_CHECK_GUI_TITLE("&7Report of &9%TARGET%&7:"),
 	
-	COMMAND_WHOIS_GUI_TITLE("&7Who is &a%TARGET%&7?"),
+	COMMAND_WHOIS_GUI_TITLE("&7Who is &9%TARGET%&7?"),
 	
 	COMMAND_TP_SUCCESS_SELF("&7You teleported to &9%TARGET%&7."),
 	COMMAND_TP_SUCCESS_GIVEN("&7You teleported &9%TARGET%&7 to &9%TARGET2%&7."),
 	COMMAND_TP_SUCCESS_RECIEVE("&7You were teleported to &9%TARGET% &7by &9%SENDER%&7."),
 	
-	COMMAND_ABUSE_SUCCESS_SELF("&7You must select how to abuse &a%TARGET%&7."),
+	COMMAND_ABUSE_SUCCESS_SELF("&7You must select how to abuse &9%TARGET%&7."),
 	
 	COMMAND_LAG_GUI_TITLE("&7Server info:"),
 	
@@ -69,7 +70,7 @@ public enum MessageVal {
 	COMMAND_SPAWNMOB_SUCCESS("&7Spawned &a%AMOUNT%&7 of &9%CHAIN%&7."),
 	COMMAND_SPAWNMOB_LIST("&7List of mobs: &9%MOBS%&7."),
 	
-	COMMAND_ABUSE_GUI_TITLE("&7Abuse &a%TARGET%&7:"),
+	COMMAND_ABUSE_GUI_TITLE("&7Abuse &9%TARGET%&7:"),
 	COMMAND_ABUSE_PLAYER_OFFLINE("&cThe target player is no longer online."),
 	
 	COMMAND_ANVIL_SUCCESS_SELF("&7You opened the &aanvil&7 view."),
@@ -82,7 +83,7 @@ public enum MessageVal {
 	COMMAND_PARTICLEEFFECT_GUI_TITLE("&7Pick a particle:"),
 	
 	COMMAND_HEAL_SUCCESS_RECIEVE("&7You have been healed."),
-	COMMAND_HEAL_SUCCESS_OTHER("&7You healed &a%TARGET%&7."),
+	COMMAND_HEAL_SUCCESS_OTHER("&7You healed &9%TARGET%&7."),
 	
 	/**
 	 * Not found type
@@ -99,7 +100,6 @@ public enum MessageVal {
 	 */
 	NO_PERMISSION("&cYou do not have permission to do this."),
 	COMMAND_MUST_BE_INGAME("&cYou must be in-game to perform this command."),
-	SERVER_MOTD("&9Change this value in messages.yml!"),
 	COLOR_PRIMARY("&7"),
 	COLOR_SECONDARY("&9"),
 	COLOR_TERTIARY("&a"),
@@ -111,7 +111,7 @@ public enum MessageVal {
 	 * Listener-type
 	 * variables.
 	 */
-	JOIN_NOTIFY_MESSAGE("&7This server is running &9Exigencies &7v&9%TARGET%&7 by &9Twyzl&7."),
+	JOIN_NOTIFY_MESSAGE("&7This server is running &9Exigencies &7v&a%TARGET%&7 by &9Twyzl&7."),
 	FIRST_LOGIN_MESSAGE("&a&l&o%PLAYER%&7&l has logged in for the first time!");
 	
 	MessageVal(String value)

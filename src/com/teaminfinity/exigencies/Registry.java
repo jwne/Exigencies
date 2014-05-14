@@ -8,6 +8,7 @@ import org.bukkit.event.Listener;
 import org.bukkit.plugin.PluginManager;
 
 import com.teaminfinity.exigencies.api.JailAPI;
+import com.teaminfinity.exigencies.api.LogAPI;
 import com.teaminfinity.exigencies.api.ParticleEffectAPI;
 import com.teaminfinity.exigencies.api.TemporaryAPI;
 import com.teaminfinity.exigencies.api.TipAPI;
@@ -33,6 +34,7 @@ import com.teaminfinity.exigencies.commands.CommandRename;
 import com.teaminfinity.exigencies.commands.CommandRoll;
 import com.teaminfinity.exigencies.commands.CommandSetjail;
 import com.teaminfinity.exigencies.commands.CommandSetspawn;
+import com.teaminfinity.exigencies.commands.CommandSheepcannon;
 import com.teaminfinity.exigencies.commands.CommandSpam;
 import com.teaminfinity.exigencies.commands.CommandSpawn;
 import com.teaminfinity.exigencies.commands.CommandSpawnmob;
@@ -45,6 +47,7 @@ import com.teaminfinity.exigencies.gui.ExigenciesGUI;
 import com.teaminfinity.exigencies.gui.GUIHandler;
 import com.teaminfinity.exigencies.listeners.ChatListener;
 import com.teaminfinity.exigencies.listeners.JailListener;
+import com.teaminfinity.exigencies.listeners.LoggerListener;
 import com.teaminfinity.exigencies.listeners.MotdListener;
 import com.teaminfinity.exigencies.listeners.PlayerListener;
 import com.teaminfinity.exigencies.objects.MovementStopper;
@@ -63,7 +66,9 @@ public class Registry {
 			new MotdListener(),
 			new ChatListener(),
 			new JailListener(),
-			new MovementStopper()
+			new MovementStopper(),
+			new PlayerListener.ColorListener(),
+			new LoggerListener()
 			}
 	;
 	
@@ -97,7 +102,8 @@ public class Registry {
 			new CommandUnjail(),
 			new CommandJails(),
 			new CommandSetspawn(),
-			new CommandSpawn()
+			new CommandSpawn(),
+			new CommandSheepcannon()
 			}
 	;
 	
@@ -153,6 +159,7 @@ public class Registry {
 		TemporaryAPI.init();
 		TipAPI.init();
 		JailAPI.init();
+		LogAPI.init();
 	}
 	
 }

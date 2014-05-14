@@ -8,14 +8,13 @@ import org.bukkit.event.server.ServerListPingEvent;
 
 import com.teaminfinity.exigencies.api.MessageAPI;
 import com.teaminfinity.exigencies.enums.ConfigVal;
-import com.teaminfinity.exigencies.enums.MessageVal;
 
 public class MotdListener implements Listener {
 
 	@EventHandler
 	public void onServerListPing(ServerListPingEvent e)
 	{
-		e.setMotd(MessageVal.SERVER_MOTD.getValue());
+		e.setMotd(ConfigVal.SERVER_MOTD.getStringValue());
 	}
 	
 	@EventHandler
