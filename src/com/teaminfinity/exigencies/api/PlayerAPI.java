@@ -32,7 +32,12 @@ public class PlayerAPI {
 	{
 		Files file = FileAPI.getUUIDDatabaseFile();
 		file.loadFile();
-		return UUID.fromString(file.getString(name.toLowerCase()));
+		String data = file.getString(name.toLowerCase());
+		if(data == null)
+		{
+			return null;
+		}
+		return UUID.fromString(data);
 	}
 	
 	public static String getName(Player player)

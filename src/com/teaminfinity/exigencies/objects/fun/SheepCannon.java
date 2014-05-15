@@ -23,7 +23,7 @@ public class SheepCannon implements BetterRunnable {
 	public SheepCannon(Location eyeLocation)
 	{
 		sheep = (Sheep) eyeLocation.getWorld().spawnEntity(eyeLocation, EntityType.SHEEP);
-		sheep.setVelocity(eyeLocation.getDirection().multiply(6.47D));
+		sheep.setVelocity(eyeLocation.getDirection().multiply(4D));
 		sheep.setColor(DyeColor.values()[RandomManager.nextInt(DyeColor.values().length)]);
 		sheep.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, Integer.MAX_VALUE, 50));
 		sheep.setCanPickupItems(false);

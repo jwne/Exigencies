@@ -5,6 +5,9 @@ import org.bukkit.command.CommandSender;
 
 public enum Cmd {
 
+	/**
+	 * Exigencies 'Core' commands
+	 */
 	COMMAND_SHEEPCANNON(Perm.COMMAND_SHEEPCANNON, ChatColor.RED + "Please try: '/Sheepcannon'"),
 	COMMAND_SPAWN(Perm.COMMAND_SPAWN, ChatColor.RED + "Please try: '/Spawn'"),
 	COMMAND_SETSPAWN(Perm.COMMAND_SETSPAWN, ChatColor.RED + "Please try: '/Setspawn'"),

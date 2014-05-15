@@ -28,6 +28,7 @@ import com.teaminfinity.exigencies.commands.CommandJails;
 import com.teaminfinity.exigencies.commands.CommandKillall;
 import com.teaminfinity.exigencies.commands.CommandLag;
 import com.teaminfinity.exigencies.commands.CommandLore;
+import com.teaminfinity.exigencies.commands.CommandMute;
 import com.teaminfinity.exigencies.commands.CommandParticleeffect;
 import com.teaminfinity.exigencies.commands.CommandPe;
 import com.teaminfinity.exigencies.commands.CommandRename;
@@ -41,6 +42,7 @@ import com.teaminfinity.exigencies.commands.CommandSpawnmob;
 import com.teaminfinity.exigencies.commands.CommandTp;
 import com.teaminfinity.exigencies.commands.CommandTpall;
 import com.teaminfinity.exigencies.commands.CommandUnjail;
+import com.teaminfinity.exigencies.commands.CommandUnmute;
 import com.teaminfinity.exigencies.commands.CommandWhois;
 import com.teaminfinity.exigencies.enums.ConfigVal;
 import com.teaminfinity.exigencies.gui.ExigenciesGUI;
@@ -52,6 +54,7 @@ import com.teaminfinity.exigencies.listeners.MotdListener;
 import com.teaminfinity.exigencies.listeners.PlayerListener;
 import com.teaminfinity.exigencies.objects.MovementStopper;
 import com.teaminfinity.exigencies.objects.command.ExigenciesCommand;
+import com.teaminfinity.exigencies.siri.SiriListener;
 import com.teaminfinity.exigencies.tasks.GeneralTask;
 import com.teaminfinity.exigencies.tasks.ParticleEffectTask;
 import com.teaminfinity.exigencies.utils.ConfigHandler;
@@ -68,7 +71,8 @@ public class Registry {
 			new JailListener(),
 			new MovementStopper(),
 			new PlayerListener.ColorListener(),
-			new LoggerListener()
+			new LoggerListener(),
+			new SiriListener()
 			}
 	;
 	
@@ -103,7 +107,9 @@ public class Registry {
 			new CommandJails(),
 			new CommandSetspawn(),
 			new CommandSpawn(),
-			new CommandSheepcannon()
+			new CommandSheepcannon(),
+			new CommandMute(),
+			new CommandUnmute()
 			}
 	;
 	

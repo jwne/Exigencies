@@ -4,6 +4,8 @@ import org.bukkit.command.CommandSender;
 
 public enum Perm {
 
+	NONE(""),
+	
 	ALL("exigencies.*"),
 
 	COLOR_SIGN("exigencies.color.sign"),
@@ -69,6 +71,10 @@ public enum Perm {
 
 	public boolean hasPermission(CommandSender user)
 	{
+		if(getNode().equals(""))
+		{
+			return true;
+		}
 		if(user.isOp())
 		{
 			return true;

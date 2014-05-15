@@ -7,6 +7,10 @@ author: Twyzl
 authors: [Twyzl, GalaxyWolff]
 softdepend: [GroupManager, PermissionsEx]
 commands:
+  unmute:
+    description: command used for unmuting players
+  mute:
+    description: command used for muting players
   sheepcannon:
     description: command used for booming!
   spawn:

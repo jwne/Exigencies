@@ -10,7 +10,14 @@ public enum MessageVal {
 	COMMAND_GAMEMODE_SUCCESS_RECIEVE("&a%SENDER% &7set your gamemode to &9%GAMEMODE%&7."),
 	COMMAND_GAMEMODE_SUCCESS_OTHER("&7You set &9%TARGET%'s &7gamemode to &9%GAMEMODE%&7."),
 	COMMAND_GAMEMODE_SUCCESS_SELF("&7You set your gamemode to &9%GAMEMODE%&7."),
+	
+	COMMAND_UNMUTE_SUCCESS_OTHER("&7You have been unmuted by &9%TARGET%&7."),
+	COMMAND_UNMUTE_SUCCESS_SELF("&7You unmuted &9%TARGET%&7."),
 
+	COMMAND_MUTE_MUTED_STOPCHAT("&cYou are muted."),
+	COMMAND_MUTE_SUCCESS_OTHER("&cYou have been muted."),
+	COMMAND_MUTE_SUCCESS_SELF("&7You muted &9%TARGET%&7."),
+	
 	COMMAND_SPAWN_SUCCESS_WAITING("&7You will teleport to &9spawn &7in &9%TARGET%&7 seconds."),
 	COMMAND_SPAWN_SUCCESS_SELF("&7You teleported to &9spawn&7."),
 	
