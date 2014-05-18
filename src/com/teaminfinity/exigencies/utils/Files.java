@@ -31,8 +31,13 @@ public class Files {
 		this.file = file;
 		this.config = new YamlConfiguration();
 	}
+	
+	public String getName()
+	{
+		return file.getName();
+	}
 		
-	public boolean DeleteFile()
+	public boolean deleteFile()
 	{
 		file.delete();
 		return true;

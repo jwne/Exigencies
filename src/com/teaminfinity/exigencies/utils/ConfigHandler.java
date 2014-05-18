@@ -32,7 +32,7 @@ public class ConfigHandler {
 	{
 		if(configFile.fileExists())
 		{
-			configFile.DeleteFile();
+			configFile.deleteFile();
 		}
 		configFile.createFile();
 		configFile.loadFile();

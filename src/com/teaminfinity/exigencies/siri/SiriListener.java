@@ -5,6 +5,8 @@ import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 
+import com.teaminfinity.exigencies.enums.MessageVal;
+
 public class SiriListener implements Listener {
 
 	@EventHandler (priority = EventPriority.HIGHEST)
@@ -20,7 +22,8 @@ public class SiriListener implements Listener {
 		}
 		e.setCancelled(true);
 		SiriResponse response = new SiriResponseDeterminer(e).getResponse();
-		e.getPlayer().sendMessage(response.getType().toString());
+		e.getPlayer().sendMessage(MessageVal.COLOR_PRIMARY.getValue() + 
+				response.getType().getMessage());
 	}
 	
 }

@@ -22,7 +22,7 @@ public class JailObject {
 		Files file = FileAPI.getJailFile(name);
 		if(file.fileExists())
 		{
-			file.DeleteFile();
+			file.deleteFile();
 		}
 		file.createFile();
 		file.loadFile();

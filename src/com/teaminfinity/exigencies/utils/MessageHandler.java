@@ -27,7 +27,7 @@ public class MessageHandler {
 	{
 		if(messageFile.fileExists())
 		{
-			messageFile.DeleteFile();
+			messageFile.deleteFile();
 		}
 		messageFile.createFile();
 		messageFile.loadFile();

@@ -5,7 +5,7 @@ description: >
              by Twyzl
 author: Twyzl
 authors: [Twyzl, GalaxyWolff]
-softdepend: [GroupManager, PermissionsEx]
+softdepend: [GroupManager, PermissionsEx, Essentials]
 commands:
   unmute:
     description: command used for unmuting players

@@ -49,7 +49,7 @@ public class CommandDeljail extends ExigenciesCommand implements CommandExecutor
 		
 		JailObject jail = JailAPI.get(args[0]);
 		Bukkit.getPluginManager().callEvent(new JailDeleteEvent(args[0]));
-		jail.getFile().DeleteFile();
+		jail.getFile().deleteFile();
 		JailAPI.unload(args[0]);
 		player.sendMessage(MessageAPI.getReformat(MessageVal.COMMAND_DELJAIL_SUCCESS, args[0]));
 		

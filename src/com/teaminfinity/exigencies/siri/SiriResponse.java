@@ -2,10 +2,24 @@ package com.teaminfinity.exigencies.siri;
 
 public enum SiriResponse {
 
+	HAVE_SEX_WITH_ME(SiriResponseType.HAVE_SEX_WITH_ME, new SiriResponseCriteria(new String[][]
+			{
+				{
+					"will", "you", "fuck", "have", "sex", "me", "love"
+				}
+			}
+		)),
+	PLAYER_GAY(SiriResponseType.PLAYER_GAY, new SiriResponseCriteria(new String[][]
+			{
+				{
+					"is", "gay"
+				}
+			}
+		)),
 	TOTAL_PLAYERS(SiriResponseType.TOTAL_PLAYERS, new SiriResponseCriteria(new String[][]
 		{
 			{
-				"top", "play", "onli", "many"
+				"top", "play", "onli", "many", "are", "few"
 			}
 		}
 	)),

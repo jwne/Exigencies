@@ -12,6 +12,7 @@ import com.teaminfinity.exigencies.api.LogAPI;
 import com.teaminfinity.exigencies.api.ParticleEffectAPI;
 import com.teaminfinity.exigencies.api.TemporaryAPI;
 import com.teaminfinity.exigencies.api.TipAPI;
+import com.teaminfinity.exigencies.api.WarpAPI;
 import com.teaminfinity.exigencies.commands.CommandAbuse;
 import com.teaminfinity.exigencies.commands.CommandAnvil;
 import com.teaminfinity.exigencies.commands.CommandBan;
@@ -166,6 +167,7 @@ public class Registry {
 		TipAPI.init();
 		JailAPI.init();
 		LogAPI.init();
+		WarpAPI.init();
 	}
 	
 }
