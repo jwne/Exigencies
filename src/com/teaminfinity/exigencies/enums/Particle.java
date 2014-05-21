@@ -14,8 +14,10 @@ import org.bukkit.block.Block;
 import org.bukkit.craftbukkit.v1_7_R3.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 
-public enum Particle
-{
+import com.teaminfinity.exigencies.developer.Exigencies;
+
+public enum Particle {
+	
 	NONE(null),
 	LARGE_EXPLOSION("largeexplode"), 
 	FIREWORK_SPARK("fireworksSpark"), 
@@ -73,8 +75,10 @@ public enum Particle
 	
 	public Particle getParticle(String input)
 	{
-		for(Particle p:Particle.values()){
-			if(input.equalsIgnoreCase(p.toString())){
+		for(Particle p:Particle.values())
+		{
+			if(input.equalsIgnoreCase(p.toString()))
+			{
 				return p;
 			}
 		}
@@ -114,26 +118,35 @@ public enum Particle
 		{
 			return;
 		}
-		if(player.getLocation().distance(location) > 100)
+		if(numberOfParticles <= 0)
 		{
 			return;
 		}
-		try {
-			PlayerConnection connection = ((CraftPlayer)player).getHandle().playerConnection;
-			PacketPlayOutWorldParticles packet = new PacketPlayOutWorldParticles();
-			setPrivateField("a", packet, getParticleName());
-			setPrivateField("b", packet, Float.valueOf((float)location.getX()));
-			setPrivateField("c", packet, Float.valueOf((float)location.getY()));
-			setPrivateField("d", packet, Float.valueOf((float)location.getZ()));
-			setPrivateField("e", packet, Float.valueOf(offsetX));
-			setPrivateField("f", packet, Float.valueOf(offsetY));
-			setPrivateField("g", packet, Float.valueOf(offsetZ));
-			setPrivateField("h", packet, Float.valueOf(speed));
-			setPrivateField("i", packet, Integer.valueOf(numberOfParticles));
-			connection.sendPacket(packet);
+		if(player.getLocation().distance(location) > 150)
+		{
+			return;
 		}
-		catch (Throwable t) {
-			t.printStackTrace();
+		if(Exigencies.getInstance().isNmsCompatible())
+		{
+			try {
+				PlayerConnection connection = ((CraftPlayer)player).getHandle().playerConnection;
+				PacketPlayOutWorldParticles packet = new PacketPlayOutWorldParticles();
+				setPrivateField("a", packet, getParticleName());
+				setPrivateField("b", packet, Float.valueOf((float)location.getX()));
+				setPrivateField("c", packet, Float.valueOf((float)location.getY()));
+				setPrivateField("d", packet, Float.valueOf((float)location.getZ()));
+				setPrivateField("e", packet, Float.valueOf(offsetX));
+				setPrivateField("f", packet, Float.valueOf(offsetY));
+				setPrivateField("g", packet, Float.valueOf(offsetZ));
+				setPrivateField("h", packet, Float.valueOf(speed));
+				setPrivateField("i", packet, Integer.valueOf(numberOfParticles));
+				connection.sendPacket(packet);
+			}
+			catch (Throwable t) 
+			{
+				Exigencies.getInstance().setNmsCompatible(false);
+				t.printStackTrace();
+			}
 		}
 	}
 	
@@ -142,7 +155,8 @@ public enum Particle
 		{
 			return;
 		}
-		for(Player p:world.getPlayers()){
+		for(Player p:world.getPlayers())
+		{
 			spawnParticle(p, location, speed, speed, speed, speed, particlesamount);
 		}
 	}
@@ -160,14 +174,16 @@ public enum Particle
 			setPrivateField("h", packet, Float.valueOf(speed));
 			setPrivateField("i", packet, Integer.valueOf(numberOfParticles));
 			connection.sendPacket(packet);
-		}catch (Throwable t)
+		}
+		catch (Throwable t)
 		{
 			t.printStackTrace();
 		}
 	}
 
 	public static void spawnTileCrack(World world, int blockId, int data, Location location, float offsetX, float offsetY, float offsetZ, float speed, int numberOfParticles) {
-		try { 
+		try 
+		{ 
 			PacketPlayOutWorldParticles packet = new PacketPlayOutWorldParticles();
 			setPrivateField("a", packet, "tilecrack_" + blockId + "_" + data);
 			setPrivateField("b", packet, Float.valueOf((float)location.getX()));
@@ -179,18 +195,22 @@ public enum Particle
 			setPrivateField("h", packet, Float.valueOf(speed));
 			setPrivateField("i", packet, Integer.valueOf(numberOfParticles));
 			List<Player> players = world.getPlayers();
-			for (int i = 0; i < players.size(); i++) {
+			for (int i = 0; i < players.size(); i++) 
+			{
 				Player player = (Player)players.get(i);
 				PlayerConnection connection = ((CraftPlayer)player).getHandle().playerConnection;
 				connection.sendPacket(packet);
 			}
-		}catch (Throwable t){
+		}
+		catch (Throwable t)
+		{
 			t.printStackTrace();
 		}
 	}
 
 	public static void spawnIconCrack(Player player, int itemId, Location location, float offsetX, float offsetY, float offsetZ, float speed, int numberOfParticles) {
-		try { 
+		try 
+		{ 
 			PlayerConnection connection = ((CraftPlayer)player).getHandle().playerConnection;
 			PacketPlayOutWorldParticles packet = new PacketPlayOutWorldParticles();
 			setPrivateField("a", packet, "tilecrack_" + itemId);
@@ -203,13 +223,16 @@ public enum Particle
 			setPrivateField("h", packet, Float.valueOf(speed));
 			setPrivateField("i", packet, Integer.valueOf(numberOfParticles));
 			connection.sendPacket(packet);
-		}catch (Throwable t){
+		}
+		catch (Throwable t)
+		{
 			t.printStackTrace();
 		}
 	}
 
 	public static void spawnIconCrack(World world, int itemId, Location location, float offsetX, float offsetY, float offsetZ, float speed, int numberOfParticles) {
-		try { 
+		try
+		{ 
 			PacketPlayOutWorldParticles packet = new PacketPlayOutWorldParticles();
 			setPrivateField("a", packet, "tilecrack_" + itemId);
 			setPrivateField("b", packet, Float.valueOf((float)location.getX()));
@@ -221,26 +244,33 @@ public enum Particle
 			setPrivateField("h", packet, Float.valueOf(speed));
 			setPrivateField("i", packet, Integer.valueOf(numberOfParticles));
 			List<Player> players = world.getPlayers();
-			for (int i = 0; i < players.size(); i++) {
+			for (int i = 0; i < players.size(); i++)
+			{
 				Player player = (Player)players.get(i);
 				PlayerConnection connection = ((CraftPlayer)player).getHandle().playerConnection;
 				connection.sendPacket(packet);
 			}
-		} catch (Throwable t){
+		}
+		catch (Throwable t)
+		{
 			t.printStackTrace();
 		}
 	}
 
 	@SuppressWarnings("deprecation")
-	public static void spawnTileCrack(Block block) {
-		spawnTileCrack(block.getWorld(), block.getTypeId(), block.getData(), block.getLocation(), 0.5F, 0.5F, 0.5F, 1.0F, 100);
+	public static void spawnTileCrack(Block block)
+	{
+		spawnTileCrack(block.getWorld(), block.getTypeId(), block.getData(),
+				block.getLocation(), 0.5F, 0.5F, 0.5F, 1.0F, 100);
 	}
 
 	public static void showDamage(Block block, int num)
 	{
-		try{
+		try
+		{
 			PacketPlayOutBlockBreakAnimation packet = new PacketPlayOutBlockBreakAnimation();
-			if (!fakeEntityIds.containsKey(block.getLocation())){
+			if (!fakeEntityIds.containsKey(block.getLocation()))
+			{
 				fakeEntityIds.put(block.getLocation(), Integer.valueOf(getNextFakeEntityId()));
 			}
 			setPrivateField("a", packet, fakeEntityIds.get(block.getLocation()));
@@ -249,12 +279,15 @@ public enum Particle
 			setPrivateField("d", packet, Integer.valueOf(block.getZ()));
 			setPrivateField("e", packet, Integer.valueOf(num));
 			List<Player> players = block.getWorld().getPlayers();
-			for (int i = 0; i < players.size(); i++) {
+			for (int i = 0; i < players.size(); i++)
+			{
 				Player player = (Player)players.get(i);
 				PlayerConnection connection = ((CraftPlayer)player).getHandle().playerConnection;
 				connection.sendPacket(packet);
 			}
-		}catch (Throwable t){
+		}
+		catch (Throwable t)
+		{
 			t.printStackTrace();
 		}
 	}

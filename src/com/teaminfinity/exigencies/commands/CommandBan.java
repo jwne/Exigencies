@@ -1,5 +1,6 @@
 package com.teaminfinity.exigencies.commands;
 
+import org.bukkit.ChatColor;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -8,7 +9,6 @@ import com.teaminfinity.exigencies.api.MessageAPI;
 import com.teaminfinity.exigencies.api.PlayerAPI;
 import com.teaminfinity.exigencies.enums.Cmd;
 import com.teaminfinity.exigencies.enums.MessageVal;
-import com.teaminfinity.exigencies.objects.AdminAlerter;
 import com.teaminfinity.exigencies.objects.command.ExigenciesCommand;
 import com.teaminfinity.exigencies.objects.command.PermBanCreator;
 
@@ -62,6 +62,7 @@ public class CommandBan extends ExigenciesCommand implements CommandExecutor {
 				reason += args[i + 1] + " ";
 			}
 			reason = MessageAPI.removeLastChar(reason);
+			reason += ChatColor.RESET;
 		}
 
 		reason = MessageAPI.addColour(reason);
@@ -71,8 +72,7 @@ public class CommandBan extends ExigenciesCommand implements CommandExecutor {
 					reason);
 		}
 		new PermBanCreator(target, reason, sender);
-		new AdminAlerter(MessageVal.COMMAND_BAN_SUCCESS_OP_MESSAGE.getValue()
-				.replaceAll("%SENDER%", PlayerAPI.getName(sender))
+		sender.sendMessage(MessageVal.COMMAND_BAN_SUCCESS_SELF.getValue()
 				.replaceAll("%TARGET%", ((pTarget != null) 
 						? PlayerAPI.getName(pTarget) : target))
 				.replaceAll("%REASON%", reason));

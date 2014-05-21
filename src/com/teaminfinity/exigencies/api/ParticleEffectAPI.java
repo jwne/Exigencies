@@ -3,11 +3,11 @@ package com.teaminfinity.exigencies.api;
 import org.bukkit.entity.Player;
 
 import com.teaminfinity.exigencies.enums.Particle;
-import com.teaminfinity.exigencies.utils.Files;
+import com.teaminfinity.exigencies.objects.F;
 
 public abstract class ParticleEffectAPI {
 
-	private transient static Files particleFile = null;
+	private transient static F particleFile = null;
 	
 	public static void init()
 	{

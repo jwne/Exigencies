@@ -14,6 +14,14 @@ public abstract class SiriResponses {
 	private static void populate()
 	{
 		messages = new HashMap<SiriResponseType, String[]>();
+		messages.put(SiriResponseType.WOOD_CHUCK, new String[]
+				{
+				"3 woods.",
+				"A woodchuck would chuck as much as a woodchuck could chuck"
+				+ " if a woodchuck could chuck wood.",
+				"What's a woodchuck?",
+				}
+		);
 		messages.put(SiriResponseType.HAVE_SEX_WITH_ME, new String[]
 				{
 				"NO",

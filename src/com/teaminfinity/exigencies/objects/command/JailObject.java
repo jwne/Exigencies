@@ -4,7 +4,7 @@ import org.bukkit.Location;
 
 import com.teaminfinity.exigencies.api.FileAPI;
 import com.teaminfinity.exigencies.api.PersistenceAPI;
-import com.teaminfinity.exigencies.utils.Files;
+import com.teaminfinity.exigencies.objects.F;
 
 public class JailObject {
 
@@ -19,7 +19,7 @@ public class JailObject {
 	
 	public void save()
 	{
-		Files file = FileAPI.getJailFile(name);
+		F file = FileAPI.getJailFile(name);
 		if(file.fileExists())
 		{
 			file.deleteFile();
@@ -31,7 +31,7 @@ public class JailObject {
 		file.saveFile();
 	}
 	
-	public Files getFile()
+	public F getFile()
 	{
 		return FileAPI.getJailFile(name);
 	}

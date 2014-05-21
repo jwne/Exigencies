@@ -18,6 +18,8 @@ import com.teaminfinity.exigencies.commands.CommandAnvil;
 import com.teaminfinity.exigencies.commands.CommandBan;
 import com.teaminfinity.exigencies.commands.CommandCheck;
 import com.teaminfinity.exigencies.commands.CommandDeljail;
+import com.teaminfinity.exigencies.commands.CommandDelwarp;
+import com.teaminfinity.exigencies.commands.CommandDos;
 import com.teaminfinity.exigencies.commands.CommandEchest;
 import com.teaminfinity.exigencies.commands.CommandGamemode;
 import com.teaminfinity.exigencies.commands.CommandGm;
@@ -36,14 +38,18 @@ import com.teaminfinity.exigencies.commands.CommandRename;
 import com.teaminfinity.exigencies.commands.CommandRoll;
 import com.teaminfinity.exigencies.commands.CommandSetjail;
 import com.teaminfinity.exigencies.commands.CommandSetspawn;
+import com.teaminfinity.exigencies.commands.CommandSetwarp;
 import com.teaminfinity.exigencies.commands.CommandSheepcannon;
 import com.teaminfinity.exigencies.commands.CommandSpam;
 import com.teaminfinity.exigencies.commands.CommandSpawn;
 import com.teaminfinity.exigencies.commands.CommandSpawnmob;
+import com.teaminfinity.exigencies.commands.CommandTempban;
 import com.teaminfinity.exigencies.commands.CommandTp;
 import com.teaminfinity.exigencies.commands.CommandTpall;
 import com.teaminfinity.exigencies.commands.CommandUnjail;
 import com.teaminfinity.exigencies.commands.CommandUnmute;
+import com.teaminfinity.exigencies.commands.CommandWarp;
+import com.teaminfinity.exigencies.commands.CommandWarps;
 import com.teaminfinity.exigencies.commands.CommandWhois;
 import com.teaminfinity.exigencies.enums.ConfigVal;
 import com.teaminfinity.exigencies.gui.ExigenciesGUI;
@@ -79,6 +85,11 @@ public class Registry {
 	
 	public ExigenciesCommand[] commands = new ExigenciesCommand[]
 			{
+			new CommandTempban(),
+			new CommandDelwarp(),
+			new CommandWarps(),
+			new CommandWarp(),
+			new CommandSetwarp(),
 			new CommandGm(),
 			new CommandGamemode(),
 			new CommandAnvil(),
@@ -110,7 +121,8 @@ public class Registry {
 			new CommandSpawn(),
 			new CommandSheepcannon(),
 			new CommandMute(),
-			new CommandUnmute()
+			new CommandUnmute(),
+			new CommandDos()
 			}
 	;
 	

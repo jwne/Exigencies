@@ -12,7 +12,7 @@ import com.teaminfinity.exigencies.api.IpAPI;
 import com.teaminfinity.exigencies.api.PlayerAPI;
 import com.teaminfinity.exigencies.gui.GUIHandler;
 import com.teaminfinity.exigencies.objects.BetterRunnable;
-import com.teaminfinity.exigencies.utils.Files;
+import com.teaminfinity.exigencies.objects.F;
 import com.teaminfinity.exigencies.utils.SchedulingUtility;
 
 public class CheckDaemon implements BetterRunnable {
@@ -69,7 +69,7 @@ public class CheckDaemon implements BetterRunnable {
 			}
 			String fileName = playerfiles.get(0);
 			playerfiles.remove(fileName);
-			Files playerFile = FileAPI.getFileForPlayer(fileName);
+			F playerFile = FileAPI.getFileForPlayer(fileName);
 			playerFile.loadFile();
 			List<String> ips = playerFile.getStringList("ips");
 			List<String> usednames = playerFile.getStringList("used_names");

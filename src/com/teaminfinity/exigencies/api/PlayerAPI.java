@@ -8,7 +8,7 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import com.teaminfinity.exigencies.enums.Perm;
-import com.teaminfinity.exigencies.utils.Files;
+import com.teaminfinity.exigencies.objects.F;
 
 public class PlayerAPI {
 
@@ -30,7 +30,7 @@ public class PlayerAPI {
 	
 	public static UUID getByName(String name)
 	{
-		Files file = FileAPI.getUUIDDatabaseFile();
+		F file = FileAPI.getUUIDDatabaseFile();
 		file.loadFile();
 		String data = file.getString(name.toLowerCase());
 		if(data == null)

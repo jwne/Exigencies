@@ -3,12 +3,12 @@ package com.teaminfinity.exigencies.api;
 import org.bukkit.entity.Player;
 
 import com.teaminfinity.exigencies.enums.TempValueType;
+import com.teaminfinity.exigencies.objects.F;
 import com.teaminfinity.exigencies.objects.command.TempResult;
-import com.teaminfinity.exigencies.utils.Files;
 
 public abstract class TemporaryAPI {
 
-	private transient static Files temporarydatabase = null;
+	private transient static F temporarydatabase = null;
 	
 	public static void init()
 	{

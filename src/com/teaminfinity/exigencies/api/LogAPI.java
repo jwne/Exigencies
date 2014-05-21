@@ -6,11 +6,11 @@ import java.util.HashMap;
 import java.util.Map.Entry;
 
 import com.teaminfinity.exigencies.enums.LogType;
-import com.teaminfinity.exigencies.utils.Files;
+import com.teaminfinity.exigencies.objects.F;
 
 public class LogAPI {
 
-	private transient static HashMap<LogType, Files> instances
+	private transient static HashMap<LogType, F> instances
 		= new HashMap<>();
 	
 	public static void init()
@@ -20,7 +20,7 @@ public class LogAPI {
 			instances.put(type, FileAPI.getLogFile(type));
 		}
 	
-		for(Entry<LogType, Files> entry : instances.entrySet())
+		for(Entry<LogType, F> entry : instances.entrySet())
 		{
 			if(!(entry.getValue().fileExists()))
 			{

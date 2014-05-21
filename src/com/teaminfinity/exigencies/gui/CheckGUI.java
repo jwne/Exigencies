@@ -14,8 +14,8 @@ import org.bukkit.inventory.Inventory;
 
 import com.teaminfinity.exigencies.api.MessageAPI;
 import com.teaminfinity.exigencies.enums.MessageVal;
+import com.teaminfinity.exigencies.objects.ItemStackCreator;
 import com.teaminfinity.exigencies.objects.command.CheckData;
-import com.teaminfinity.exigencies.objects.command.ItemStackCreator;
 
 public class CheckGUI implements ExigenciesGUI {
 

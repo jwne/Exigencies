@@ -2,6 +2,13 @@ package com.teaminfinity.exigencies.siri;
 
 public enum SiriResponse {
 
+	WOOD_CHUCK(SiriResponseType.WOOD_CHUCK, new SiriResponseCriteria(new String[][]
+			{
+				{
+					"how", "much", "wood", "could", "a", "would", "chuck"
+				}
+			}
+		)),
 	HAVE_SEX_WITH_ME(SiriResponseType.HAVE_SEX_WITH_ME, new SiriResponseCriteria(new String[][]
 			{
 				{

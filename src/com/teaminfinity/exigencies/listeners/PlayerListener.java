@@ -16,16 +16,16 @@ import com.teaminfinity.exigencies.enums.ConfigVal;
 import com.teaminfinity.exigencies.enums.MessageVal;
 import com.teaminfinity.exigencies.enums.Perm;
 import com.teaminfinity.exigencies.enums.UUIDManagementType;
+import com.teaminfinity.exigencies.objects.F;
 import com.teaminfinity.exigencies.objects.UUIDManager;
 import com.teaminfinity.exigencies.objects.events.PlayerFirstJoinEvent;
-import com.teaminfinity.exigencies.utils.Files;
 
 public class PlayerListener implements Listener {
 
 	@EventHandler
 	public void onPlayerFirstJoin(PlayerFirstJoinEvent e)
 	{
-		Files file = FileAPI.getFileForPlayer(e.getPlayer());
+		F file = FileAPI.getFileForPlayer(e.getPlayer());
 		file.createFile();
 		file.loadFile();
 		file.set("first_join", System.currentTimeMillis());
@@ -44,7 +44,7 @@ public class PlayerListener implements Listener {
 			e.getPlayer().sendMessage(MessageAPI.getReformat(MessageVal.JOIN_NOTIFY_MESSAGE,
 					Core.instance.getDescription().getVersion()));
 		}
-		Files file = FileAPI.getFileForPlayer(e.getPlayer());
+		F file = FileAPI.getFileForPlayer(e.getPlayer());
 		if(!(file.fileExists()))
 		{
 			Bukkit.getPluginManager().callEvent(new PlayerFirstJoinEvent(e));

@@ -7,13 +7,13 @@ import org.bukkit.entity.Player;
 
 import com.teaminfinity.exigencies.Core;
 import com.teaminfinity.exigencies.enums.LogType;
-import com.teaminfinity.exigencies.utils.Files;
+import com.teaminfinity.exigencies.objects.F;
 
 public abstract class FileAPI {
 
-	public static Files getTemporaryDatabaseFile()
+	public static F getTemporaryDatabaseFile()
 	{
-		return new Files(new File(Core.instance.getDataFolder() + "/plugindata/edit/with/caution"), 
+		return new F(new File(Core.instance.getDataFolder() + "/plugindata/edit/with/caution"), 
 				"temporarydatabase");
 	}
 
@@ -23,9 +23,9 @@ public abstract class FileAPI {
 		return new File(exigencies.getPath().replaceAll("Exigencies", "Essentials"));
 	}
 
-	public static Files getWarp(String name)
+	public static F getWarp(String name)
 	{
-		return new Files(getWarpDir(), name.toLowerCase());
+		return new F(getWarpDir(), name.toLowerCase());
 	}
 
 	public static File getWarpDir()
@@ -33,14 +33,14 @@ public abstract class FileAPI {
 		return new File(Core.instance.getDataFolder() + "/warps");
 	}
 
-	public static Files getJailFile(String name)
+	public static F getJailFile(String name)
 	{
-		return new Files(getJailFileDir(), name.toLowerCase());
+		return new F(getJailFileDir(), name.toLowerCase());
 	}
 
-	public static Files getLogFile(LogType type)
+	public static F getLogFile(LogType type)
 	{
-		return new Files(getLogFileDir(), type.toString().toLowerCase());
+		return new F(getLogFileDir(), type.toString().toLowerCase());
 	}
 
 	public static File getLogFileDir()
@@ -48,24 +48,24 @@ public abstract class FileAPI {
 		return new File(Core.instance.getDataFolder() + "/logs");
 	}
 
-	public static Files getFileForPlayer(String fileName)
+	public static F getFileForPlayer(String fileName)
 	{
-		return new Files(getPlayerFileDir(), fileName.replaceAll(".yml", ""));
+		return new F(getPlayerFileDir(), fileName.replaceAll(".yml", ""));
 	}
 
-	public static Files getUUIDDatabaseFile()
+	public static F getUUIDDatabaseFile()
 	{
-		return new Files(new File(Core.instance.getDataFolder() + "/plugindata/edit/with/caution"), "uuiddatabase");
+		return new F(new File(Core.instance.getDataFolder() + "/plugindata/edit/with/caution"), "uuiddatabase");
 	}
 
-	public static Files getParticleEffectFile()
+	public static F getParticleEffectFile()
 	{
-		return new Files(new File(Core.instance.getDataFolder() + "/plugindata/edit/with/caution"), "particleeffectdata");
+		return new F(new File(Core.instance.getDataFolder() + "/plugindata/edit/with/caution"), "particleeffectdata");
 	}
 
-	public static Files getJailedUserFile()
+	public static F getJailedUserFile()
 	{
-		return new Files(Core.instance.getDataFolder(), "jailedusers");
+		return new F(Core.instance.getDataFolder(), "jailedusers");
 	}
 
 	public static File getPlayerFileDir()
@@ -78,14 +78,14 @@ public abstract class FileAPI {
 		return new File(Core.instance.getDataFolder() + "/jails");
 	}
 
-	public static Files getFileForPlayer(Player player)
+	public static F getFileForPlayer(Player player)
 	{
-		return new Files(getPlayerFileDir(), player.getUniqueId().toString());
+		return new F(getPlayerFileDir(), player.getUniqueId().toString());
 	}
 
-	public static Files getFileForPlayer(UUID id)
+	public static F getFileForPlayer(UUID id)
 	{
-		return new Files(getPlayerFileDir(), id.toString());
+		return new F(getPlayerFileDir(), id.toString());
 	}
 
 }

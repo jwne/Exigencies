@@ -2,7 +2,13 @@ package com.teaminfinity.exigencies.api;
 
 import java.io.File;
 
-import com.teaminfinity.exigencies.utils.Files;
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
+import org.bukkit.World;
+
+import com.teaminfinity.exigencies.objects.F;
+import com.teaminfinity.exigencies.objects.exception.WarpNotFoundException;
+import com.teaminfinity.exigencies.objects.exception.WorldNotFoundException;
 
 public abstract class WarpAPI {
 
@@ -37,6 +43,11 @@ public abstract class WarpAPI {
 		}
 	}
 	
+	public static String[] getWarps()
+	{
+		return FileAPI.getWarpDir().list();
+	}
+	
 	/*
 	 * I want it to transfer all the warps from essentials to here
 	 */
@@ -56,8 +67,8 @@ public abstract class WarpAPI {
 		essentialsWarpDir.mkdirs();
 		for(String str : essentialsWarpDir.list())
 		{
-			Files file = new Files(essentialsWarpDir, str); 
-			Files newFile = FileAPI.getWarp(file.getName().replaceAll(".yml", ""));
+			F file = new F(essentialsWarpDir, str); 
+			F newFile = FileAPI.getWarp(file.getName().replaceAll(".yml", ""));
 			if(newFile.fileExists())
 			{
 				newFile.deleteFile();
@@ -77,8 +88,56 @@ public abstract class WarpAPI {
 			file.deleteFile();
 			transferred++;
 		}
-		System.out.println("[Exigencies] Transferred " + transferred + " warps.");
+		System.out.println("[Exigencies] Transferred " + transferred + " warp"
+				+ ((transferred > 1) ? "s." : "."));
 		essentialsHasWarps = false;
+	}
+	
+	public static void delWarp(String name) throws WarpNotFoundException
+	{		
+		F file = FileAPI.getWarp(name);
+		if(!(file.fileExists()))
+		{
+			throw new WarpNotFoundException(name);
+		}
+		file.deleteFile();
+	}
+	
+	public static Location getWarp(String name) throws WorldNotFoundException,
+		WarpNotFoundException
+	{
+		F file = FileAPI.getWarp(name);
+		if(!(file.fileExists()))
+		{
+			throw new WarpNotFoundException(name);
+		}
+		file.loadFile();
+		World world = Bukkit.getWorld(file.getString("world"));
+		if(world == null)
+		{
+			throw new WorldNotFoundException(file.getString("world"));
+		}
+		Location loc = new Location(world,
+				file.getDouble("x"),
+				file.getDouble("y"),
+				file.getDouble("z"));
+		loc.setYaw(file.getFloat("yaw"));
+		loc.setPitch(file.getFloat("pitch"));
+		return loc;
+	}
+	
+	public static void setWarp(Location location, String name)
+	{
+		F file = FileAPI.getWarp(name);
+		file.loadFile();
+		file.set("name", name);
+		file.set("world", location.getWorld().getName());
+		file.set("x", location.getX());
+		file.set("y", location.getY());
+		file.set("z", location.getZ());
+		file.set("yaw", location.getYaw());
+		file.set("pitch", location.getPitch());
+		file.saveFile();
 	}
 	
 }

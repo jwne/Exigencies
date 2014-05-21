@@ -6,7 +6,6 @@ import java.util.UUID;
 
 import com.teaminfinity.exigencies.api.FileAPI;
 import com.teaminfinity.exigencies.enums.UUIDManagementType;
-import com.teaminfinity.exigencies.utils.Files;
 
 public class UUIDManager {
 
@@ -14,7 +13,7 @@ public class UUIDManager {
 	{
 		if(type.equals(UUIDManagementType.PLAYER))
 		{
-			Files file = FileAPI.getFileForPlayer(id);
+			F file = FileAPI.getFileForPlayer(id);
 			file.loadFile();
 			List<String> accounts = file.getStringList("used_names");
 			if(accounts == null)
@@ -31,7 +30,7 @@ public class UUIDManager {
 		}
 		else if(type.equals(UUIDManagementType.DATABASE))
 		{
-			Files database = FileAPI.getUUIDDatabaseFile();
+			F database = FileAPI.getUUIDDatabaseFile();
 			if(!(database.fileExists()))
 			{
 				database.createFile();
@@ -43,7 +42,7 @@ public class UUIDManager {
 		}
 		else if(type.equals(UUIDManagementType.BOTH))
 		{
-			Files database = FileAPI.getUUIDDatabaseFile();
+			F database = FileAPI.getUUIDDatabaseFile();
 			if(!(database.fileExists()))
 			{
 				database.createFile();
@@ -52,7 +51,7 @@ public class UUIDManager {
 			database.set(name.toLowerCase(), id.toString());
 			database.set(id.toString(), name);
 			database.saveFile();
-			Files file = FileAPI.getFileForPlayer(id);
+			F file = FileAPI.getFileForPlayer(id);
 			file.loadFile();
 			List<String> accounts = file.getStringList("used_names");
 			if(accounts == null)

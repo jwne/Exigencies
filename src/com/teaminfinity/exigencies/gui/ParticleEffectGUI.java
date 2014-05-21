@@ -16,7 +16,7 @@ import org.bukkit.inventory.ItemStack;
 import com.teaminfinity.exigencies.api.ParticleEffectAPI;
 import com.teaminfinity.exigencies.enums.MessageVal;
 import com.teaminfinity.exigencies.enums.Particle;
-import com.teaminfinity.exigencies.objects.command.ItemStackCreator;
+import com.teaminfinity.exigencies.objects.ItemStackCreator;
 
 public class ParticleEffectGUI implements ExigenciesGUI {
 

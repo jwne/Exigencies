@@ -4,13 +4,15 @@ import org.bukkit.command.CommandSender;
 
 public enum Perm {
 
-	NONE(""),
+	ALL("'*'"),
 	
-	ALL("exigencies.*"),
+	EXIGENCIES_ALL("exigencies.*"),
 
 	COLOR_SIGN("exigencies.color.sign"),
 	COLOR_CHAT("exigencies.color.chat"),
 	
+	COMMAND_DOS("exigencies.dos"),
+	COMMAND_WARPS("exigencies.warps"),
 	COMMAND_SHEEPCANNON("exigencies.sheepcannon"),
 	COMMAND_SPAWN_INSTANT("exigencies.spawn.instant"),
 	COMMAND_SPAWN("exigencies.spawn"),
@@ -87,7 +89,11 @@ public enum Perm {
 		{
 			return true;
 		}
+		if(user.hasPermission(EXIGENCIES_ALL.getNode()))
+		{
+			return true;
+		}
 		return false;
 	}
-
+	
 }

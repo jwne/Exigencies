@@ -12,8 +12,8 @@ import com.teaminfinity.exigencies.api.TemporaryAPI;
 import com.teaminfinity.exigencies.enums.ConfigVal;
 import com.teaminfinity.exigencies.enums.MessageVal;
 import com.teaminfinity.exigencies.enums.TempValueType;
+import com.teaminfinity.exigencies.objects.F;
 import com.teaminfinity.exigencies.objects.command.TempResult;
-import com.teaminfinity.exigencies.utils.Files;
 
 public class ChatListener implements Listener {
 
@@ -29,7 +29,7 @@ public class ChatListener implements Listener {
 		}
 		else
 		{
-			Files playerFile = FileAPI.getFileForPlayer(e.getPlayer());
+			F playerFile = FileAPI.getFileForPlayer(e.getPlayer());
 			playerFile.loadFile();
 			if(playerFile.getBoolean("muted"))
 			{

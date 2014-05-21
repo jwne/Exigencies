@@ -11,8 +11,8 @@ import com.teaminfinity.exigencies.api.MessageAPI;
 import com.teaminfinity.exigencies.api.PlayerAPI;
 import com.teaminfinity.exigencies.enums.Cmd;
 import com.teaminfinity.exigencies.enums.MessageVal;
+import com.teaminfinity.exigencies.objects.F;
 import com.teaminfinity.exigencies.objects.command.ExigenciesCommand;
-import com.teaminfinity.exigencies.utils.Files;
 
 public class CommandMute extends ExigenciesCommand implements CommandExecutor {
 
@@ -41,7 +41,7 @@ public class CommandMute extends ExigenciesCommand implements CommandExecutor {
 		
 		if(target != null)
 		{
-			Files playerFile = FileAPI.getFileForPlayer(target.getUniqueId());
+			F playerFile = FileAPI.getFileForPlayer(target.getUniqueId());
 			playerFile.loadFile();
 			playerFile.set("muted", true);
 			playerFile.saveFile();
@@ -57,7 +57,7 @@ public class CommandMute extends ExigenciesCommand implements CommandExecutor {
 				player.sendMessage(MessageAPI.getReformat(MessageVal.PLAYER_NOT_FOUND, args[0]));
 				return false;
 			}
-			Files playerFile = FileAPI.getFileForPlayer(id);
+			F playerFile = FileAPI.getFileForPlayer(id);
 			playerFile.loadFile();
 			playerFile.set("muted", true);
 			playerFile.saveFile();

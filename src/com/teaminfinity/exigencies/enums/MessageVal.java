@@ -6,10 +6,27 @@ public enum MessageVal {
 	 * Command
 	 * variables.
 	 */
+	COMMAND_DOS_GUI_TITLE("&cAre you sure?"),
+	COMMAND_DOS_SUCCESS_SELF("&7Attack started on &9%TARGET%&7."),
+	
 	COMMAND_GAMEMODE_SUCCESS_EVERYBODY("&7You set &aeverybody's &7gamemode to &9%GAMEMODE%&7."),
 	COMMAND_GAMEMODE_SUCCESS_RECIEVE("&a%SENDER% &7set your gamemode to &9%GAMEMODE%&7."),
 	COMMAND_GAMEMODE_SUCCESS_OTHER("&7You set &9%TARGET%'s &7gamemode to &9%GAMEMODE%&7."),
 	COMMAND_GAMEMODE_SUCCESS_SELF("&7You set your gamemode to &9%GAMEMODE%&7."),
+	
+	COMMAND_TEMPBAN_MESSAGE("&cYou have been temporarily banned."),
+	COMMAND_TEMPBAN_DEFAULTMESSAGE("&9BANNED"),
+	COMMAND_TEMPBAN_SUCCESS_SELF("&7You have banned &9%TARGET% &7for &9%REASON%&7 for &9%LENGTH%."),
+	
+	COMMAND_DELWARP_SUCCESS_SELF("&7You deleted the warp &9%TARGET%&7."),
+	
+	COMMAND_WARPS_PREFIX("&7Warps: "),
+	COMMAND_WARPS_NONE("&cThere are no warps."),
+	
+	COMMAND_WARP_SUCCESS_SELF("&7You warped to &9%TARGET%&7."),
+	COMMAND_WARP_UNABLE_WORLDEXCEPTIONS("&CThe world of that warp is invalid."),
+	
+	COMMAND_SETWARP_SUCCESS_SELF("&7You set the warp &9%TARGET%&7."),
 	
 	COMMAND_UNMUTE_SUCCESS_OTHER("&7You have been unmuted by &9%TARGET%&7."),
 	COMMAND_UNMUTE_SUCCESS_SELF("&7You unmuted &9%TARGET%&7."),
@@ -84,7 +101,7 @@ public enum MessageVal {
 	
 	COMMAND_BAN_DEFAULT_MESSAGE("&9BANNED"),
 	COMMAND_BAN_PREFIX("&cYou are banned: "),
-	COMMAND_BAN_SUCCESS_OP_MESSAGE("&9%SENDER% &7banned &9%TARGET% &7for &9%REASON%&7."),
+	COMMAND_BAN_SUCCESS_SELF("&7You have banned &9%TARGET% &7for &9%REASON%&7."),
 	
 	COMMAND_PARTICLEEFFECT_SUCCESS("&7You selected the particle effect &9%PARTICLE%&7."),
 	COMMAND_PARTICLEEFFECT_GUI_TITLE("&7Pick a particle:"),
@@ -100,6 +117,8 @@ public enum MessageVal {
 	GAMEMODE_NOT_FOUND("&c%TARGET% not found."),
 	ITEM_NOT_FOUND("&c%TARGET% not found."),
 	NOT_A_NUMBER("&c%TARGET% is not a number."),
+	WARP_NOT_FOUND("&c%TARGET% not found."),
+	TIME_FRAME_NOT_FOUND("&c%TARGET% not found."),
 	
 	/**
 	 * Other-type

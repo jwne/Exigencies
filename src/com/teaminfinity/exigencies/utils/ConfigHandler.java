@@ -5,10 +5,11 @@ import org.bukkit.Bukkit;
 import com.teaminfinity.exigencies.Core;
 import com.teaminfinity.exigencies.api.MessageAPI;
 import com.teaminfinity.exigencies.enums.ConfigVal;
+import com.teaminfinity.exigencies.objects.F;
 
 public class ConfigHandler {
 
-	public static Files configFile = null;
+	public static F configFile = null;
 	
 	public void saveValue(ConfigVal val)
 	{
@@ -20,7 +21,7 @@ public class ConfigHandler {
 	{
 		if(configFile == null)
 		{
-			configFile = new Files(Core.instance.getDataFolder(), "config");
+			configFile = new F(Core.instance.getDataFolder(), "config");
 			if(!(configFile.fileExists()))
 			{
 				regenerateConfig();

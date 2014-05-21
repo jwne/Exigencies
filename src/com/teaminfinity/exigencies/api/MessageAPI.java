@@ -82,6 +82,20 @@ public abstract class MessageAPI {
 		return stringBuilder;
 	}
 	
+	public static String toString(String[] strings)
+	{
+		String str = "";
+		for(String string : strings)
+		{
+			str += MessageVal.COLOR_SECONDARY.getValue() + string +
+					MessageVal.COLOR_PRIMARY.getValue() + ", ";
+		}
+		str = removeLastChar(str);
+		str = removeLastChar(str);
+		str += MessageVal.COLOR_PRIMARY.getValue() + ".";
+		return str;
+	}
+	
 	public static String toString(List<String> strings)
 	{
 		String str = "";

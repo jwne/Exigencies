@@ -8,9 +8,15 @@ public abstract class GUIHandler {
 				new LagGUI(),
 				new AbuseGUI(),
 				new ParticleEffectGUI(),
-				new CheckGUI()
+				new CheckGUI(),
+				new DosGUI()
 			}
 	;
+	
+	public static DosGUI getDos()
+	{
+		return (DosGUI) guis[5];
+	}
 	
 	public static CheckGUI getCheck()
 	{

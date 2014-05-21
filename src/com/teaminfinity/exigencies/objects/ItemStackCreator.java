@@ -1,4 +1,4 @@
-package com.teaminfinity.exigencies.objects.command;
+package com.teaminfinity.exigencies.objects;
 
 import java.util.Arrays;
 import java.util.List;

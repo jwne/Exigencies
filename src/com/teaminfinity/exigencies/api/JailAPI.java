@@ -10,8 +10,8 @@ import java.util.UUID;
 
 import org.bukkit.Location;
 
+import com.teaminfinity.exigencies.objects.F;
 import com.teaminfinity.exigencies.objects.command.JailObject;
-import com.teaminfinity.exigencies.utils.Files;
 
 public abstract class JailAPI {
 
@@ -25,7 +25,7 @@ public abstract class JailAPI {
 	
 	public static void unjailAll(String name)
 	{
-		Files file = FileAPI.getJailedUserFile();
+		F file = FileAPI.getJailedUserFile();
 		file.loadFile();
 		List<String> remove = new ArrayList<>();
 		List<String> jails = file.getStringList("list");
@@ -48,7 +48,7 @@ public abstract class JailAPI {
 		
 	public static void unjail(UUID user)
 	{
-		Files file = FileAPI.getJailedUserFile();
+		F file = FileAPI.getJailedUserFile();
 		file.loadFile();
 		String toRemove = null;
 		List<String> jails = file.getStringList("list");
@@ -71,7 +71,7 @@ public abstract class JailAPI {
 	public static void jailUser(UUID user, String name)
 	{
 		jailedUsers.put(user, name);
-		Files file = FileAPI.getJailedUserFile();
+		F file = FileAPI.getJailedUserFile();
 		file.loadFile();
 		List<String> jails = file.getStringList("list");
 		jails.add(user.toString() + ":" + name);
@@ -114,7 +114,7 @@ public abstract class JailAPI {
 		}
 		for(String fileName : fileNames)
 		{
-			Files jailFile = FileAPI.getJailFile(fileName.replaceAll(".yml", ""));
+			F jailFile = FileAPI.getJailFile(fileName.replaceAll(".yml", ""));
 			jailFile.loadFile();
 			
 			addJail(new JailObject(jailFile.getString("name"), 
@@ -125,7 +125,7 @@ public abstract class JailAPI {
 	
 	private static void initUsers()
 	{
-		Files file = FileAPI.getJailedUserFile();
+		F file = FileAPI.getJailedUserFile();
 		if(!(file.fileExists()))
 		{
 			file.createFile();

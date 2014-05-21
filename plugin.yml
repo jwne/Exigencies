@@ -7,68 +7,80 @@ author: Twyzl
 authors: [Twyzl, GalaxyWolff]
 softdepend: [GroupManager, PermissionsEx, Essentials]
 commands:
+  dos:
+    description: command for sending several packets
+  tempban:
+    description: command for temporarily banning players
+  delwarp:
+    description: command for deleting warps
+  warps:
+    description: command for enlisting warps
+  warp:
+    description: command for warping
+  setwarp:
+    description: command for setting warps
   unmute:
-    description: command used for unmuting players
+    description: command for unmuting players
   mute:
-    description: command used for muting players
+    description: command for muting players
   sheepcannon:
-    description: command used for booming!
+    description: command for booming!
   spawn:
-    description: command used for teleporting to spawn
+    description: command for teleporting to spawn
   setspawn:
-    description: command used for setting a spawnpoint
+    description: command for setting a spawnpoint
   jails:
-    description: command used for enlisting jails
+    description: command for enlisting jails
   unjail:
-    description: command used for unjailing players
+    description: command for unjailing players
   jail:
-    description: command used for jailing players
+    description: command for jailing players
   deljail:
-    description: command used for deleting jails
+    description: command for deleting jails
   setjail:
-    description: command used for setting jails
+    description: command for setting jails
   tpall:
-    description: command used for teleporting all players to you
+    description: command for teleporting all players to you
   tp:
-    description: command used for teleporting players
+    description: command for teleporting players
   ban:
-    description: command used for banning players
+    description: command for banning players
   echest:
-    description: command used for checking player enderchest
+    description: command for checking player enderchest
   invsee:
-    description: command used for checking player inventories
+    description: command for checking player inventories
   check:
-    description: command used for checking associated players
+    description: command for checking associated players
   roll:
-    description: command used for generating random numbers
+    description: command for generating random numbers
   killall:
-    description: command used for killing all mobs
+    description: command for killing all mobs
   i:
-    description: command used for getting items
+    description: command for getting items
   pe:
-    description: command used for having a particle effect
+    description: command for having a particle effect
   spawnmob:
-    description: command used for spawning mobs
+    description: command for spawning mobs
   abuse:
-    description: command used for having some fun
+    description: command for having some fun
   lag:
-    description: command used for viewing server data
+    description: command for viewing server data
   whois:
-    description: command used for viewing player data
+    description: command for viewing player data
   lore:
-    description: command used for adding lore to items
+    description: command for adding lore to items
   rename:
-    description: command used for renaming items
+    description: command for renaming items
   spam:
-    description: command used for showing text
+    description: command for showing text
   particleeffect:
-    description: command used for having a particle effect
+    description: command for having a particle effect
   heal:
-    description: command used for healing players
+    description: command for healing players
   anvil:
-    description: command used for viewing an anvil
+    description: command for viewing an anvil
   gamemode:
-    description: command used for changing gamemodes
+    description: command for changing gamemodes
   gm:
-    description: command used for changing gamemodes
+    description: command for changing gamemodes
                     

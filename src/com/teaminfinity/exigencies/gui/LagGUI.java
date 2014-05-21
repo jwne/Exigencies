@@ -16,7 +16,7 @@ import org.bukkit.inventory.ItemStack;
 import com.teaminfinity.exigencies.api.LaggAPI;
 import com.teaminfinity.exigencies.api.MessageAPI;
 import com.teaminfinity.exigencies.enums.MessageVal;
-import com.teaminfinity.exigencies.objects.command.ItemStackCreator;
+import com.teaminfinity.exigencies.objects.ItemStackCreator;
 import com.teaminfinity.exigencies.tasks.GeneralTask;
 
 public class LagGUI implements ExigenciesGUI {

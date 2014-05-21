@@ -15,7 +15,7 @@ import com.teaminfinity.exigencies.api.MessageAPI;
 import com.teaminfinity.exigencies.api.PlayerAPI;
 import com.teaminfinity.exigencies.enums.AbuseMethod;
 import com.teaminfinity.exigencies.enums.MessageVal;
-import com.teaminfinity.exigencies.objects.command.ItemStackCreator;
+import com.teaminfinity.exigencies.objects.ItemStackCreator;
 
 public class AbuseGUI implements ExigenciesGUI {
 

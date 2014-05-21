@@ -1,4 +1,4 @@
-package com.teaminfinity.exigencies.utils;
+package com.teaminfinity.exigencies.objects;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -10,22 +10,22 @@ import java.util.Set;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.YamlConfiguration;
 
-public class Files {
+public class F {
 
-	private static ArrayList<Files> loadedFiles = new ArrayList<Files>();
+	private static ArrayList<F> loadedFiles = new ArrayList<F>();
 	
 	private File folder;
 	private File file;
 	private YamlConfiguration config;
 	
-	public Files(File folder, String fileName)
+	public F(File folder, String fileName)
 	{
 		this.folder = folder;
 		this.file = new File(folder, fileName+".yml");
 		this.config = new YamlConfiguration();
 	}
 	
-	public Files(File folder, File file)
+	public F(File folder, File file)
 	{
 		this.folder=folder;
 		this.file = file;
@@ -87,7 +87,7 @@ public class Files {
 	
 	public boolean loadFile()
 	{
-		if(Files.loadedFiles.contains(this))
+		if(F.loadedFiles.contains(this))
 		{
 			return true;
 		}

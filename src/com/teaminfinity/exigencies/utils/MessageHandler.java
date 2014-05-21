@@ -5,16 +5,17 @@ import org.bukkit.Bukkit;
 import com.teaminfinity.exigencies.Core;
 import com.teaminfinity.exigencies.api.MessageAPI;
 import com.teaminfinity.exigencies.enums.MessageVal;
+import com.teaminfinity.exigencies.objects.F;
 
 public class MessageHandler {
 
-	public static Files messageFile = null;
+	public static F messageFile = null;
 
 	public MessageHandler()
 	{
 		if(messageFile == null)
 		{
-			messageFile = new Files(Core.instance.getDataFolder(), "messages");
+			messageFile = new F(Core.instance.getDataFolder(), "messages");
 			if(!(messageFile.fileExists()))
 			{
 				regenerateConfig();

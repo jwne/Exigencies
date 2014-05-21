@@ -6,13 +6,13 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-import com.teaminfinity.exigencies.utils.Files;
+import com.teaminfinity.exigencies.objects.F;
 
 public abstract class IpAPI {
 
 	public static void logIp(UUID id, String ip)
 	{
-		Files file = FileAPI.getFileForPlayer(id);
+		F file = FileAPI.getFileForPlayer(id);
 		file.loadFile();
 		List<String> ips = file.getStringList("ips");
 		if(ips == null)
