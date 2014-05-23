@@ -1,24 +1,32 @@
 package com.teaminfinity.exigencies.listeners;
 
+import java.util.ArrayList;
+
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.SignChangeEvent;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.AsyncPlayerPreLoginEvent;
+import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerKickEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 
 import com.teaminfinity.exigencies.Core;
 import com.teaminfinity.exigencies.api.FileAPI;
 import com.teaminfinity.exigencies.api.IpAPI;
 import com.teaminfinity.exigencies.api.MessageAPI;
+import com.teaminfinity.exigencies.api.PowerToolAPI;
 import com.teaminfinity.exigencies.enums.ConfigVal;
 import com.teaminfinity.exigencies.enums.MessageVal;
 import com.teaminfinity.exigencies.enums.Perm;
 import com.teaminfinity.exigencies.enums.UUIDManagementType;
 import com.teaminfinity.exigencies.objects.F;
 import com.teaminfinity.exigencies.objects.UUIDManager;
+import com.teaminfinity.exigencies.objects.command.PowerToolData;
 import com.teaminfinity.exigencies.objects.events.PlayerFirstJoinEvent;
+import com.teaminfinity.exigencies.objects.events.PlayerLeaveEvent;
 
 public class PlayerListener implements Listener {
 
@@ -29,11 +37,47 @@ public class PlayerListener implements Listener {
 		file.createFile();
 		file.loadFile();
 		file.set("first_join", System.currentTimeMillis());
+		file.set("powertooldata", new ArrayList<String>());
 		file.saveFile();
 		if(ConfigVal.FIRST_JOIN_MESSAGE_ENABLED.getBooleanValue())
 		{
 			Bukkit.broadcastMessage(MessageAPI.getReformat(MessageVal.FIRST_LOGIN_MESSAGE, e.getPlayer()));
 		}
+	}
+	
+	@EventHandler
+	public void onPowerToolUse(PlayerInteractEvent e)
+	{
+		if(e.getPlayer().getItemInHand() == null)
+		{
+			return;
+		}
+		PowerToolData data = PowerToolAPI.get(e.getPlayer().getUniqueId(),
+				e.getPlayer().getItemInHand().getType());
+		if(data == null)
+		{
+			return;
+		}
+		data.run(e.getPlayer());
+		e.setCancelled(true);
+	}
+	
+	@EventHandler
+	public void onPlayerLeave(PlayerLeaveEvent e)
+	{
+		PowerToolAPI.unload(e.getPlayer().getUniqueId());
+	}
+	
+	@EventHandler
+	public void onPlayerQuit(PlayerQuitEvent e)
+	{
+		Bukkit.getPluginManager().callEvent(new PlayerLeaveEvent(e.getPlayer()));
+	}
+	
+	@EventHandler
+	public void onPlayerKick(PlayerKickEvent e)
+	{
+		Bukkit.getPluginManager().callEvent(new PlayerLeaveEvent(e.getPlayer()));
 	}
 	
 	@EventHandler

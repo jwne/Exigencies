@@ -2,6 +2,8 @@ package com.teaminfinity.exigencies.listeners;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.BlockBreakEvent;
+import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerCommandPreprocessEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -89,6 +91,24 @@ public class JailListener implements Listener {
 				}
 			}
 			, 3);
+		}
+	}
+	
+	@EventHandler
+	public void onBlockPlace(BlockPlaceEvent e)
+	{
+		if(JailAPI.isJailed(e.getPlayer().getUniqueId()))
+		{
+			e.setCancelled(true);
+		}
+	}
+	
+	@EventHandler
+	public void onBlockBreak(BlockBreakEvent e)
+	{
+		if(JailAPI.isJailed(e.getPlayer().getUniqueId()))
+		{
+			e.setCancelled(true);
 		}
 	}
 	

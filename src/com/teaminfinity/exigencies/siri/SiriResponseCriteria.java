@@ -4,7 +4,7 @@ import org.bukkit.ChatColor;
 
 public class SiriResponseCriteria {
 
-	private transient final int MATCHES_NEEDED = 2;
+	private transient final int MATCHES_NEEDED = 3;
 	
 	public SiriResponseCriteria(String[][] data)
 	{

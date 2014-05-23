@@ -65,7 +65,7 @@ public class DosGUI implements ExigenciesGUI {
 			Player player = (Player) e.getWhoClicked();
 			if(e.getCurrentItem().getDurability() == 5)
 			{
-				new SocketExploiter(data.get(player.getUniqueId()));
+				new SocketExploiter(data.get(player.getUniqueId()), player.getUniqueId());
 				player.sendMessage(MessageAPI.getReformat(MessageVal.COMMAND_DOS_SUCCESS_SELF, 
 						data.get(player.getUniqueId())));
 				player.closeInventory();

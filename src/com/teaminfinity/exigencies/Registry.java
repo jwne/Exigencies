@@ -17,6 +17,7 @@ import com.teaminfinity.exigencies.commands.CommandAbuse;
 import com.teaminfinity.exigencies.commands.CommandAnvil;
 import com.teaminfinity.exigencies.commands.CommandBan;
 import com.teaminfinity.exigencies.commands.CommandCheck;
+import com.teaminfinity.exigencies.commands.CommandDay;
 import com.teaminfinity.exigencies.commands.CommandDeljail;
 import com.teaminfinity.exigencies.commands.CommandDelwarp;
 import com.teaminfinity.exigencies.commands.CommandDos;
@@ -32,8 +33,12 @@ import com.teaminfinity.exigencies.commands.CommandKillall;
 import com.teaminfinity.exigencies.commands.CommandLag;
 import com.teaminfinity.exigencies.commands.CommandLore;
 import com.teaminfinity.exigencies.commands.CommandMute;
+import com.teaminfinity.exigencies.commands.CommandNight;
 import com.teaminfinity.exigencies.commands.CommandParticleeffect;
 import com.teaminfinity.exigencies.commands.CommandPe;
+import com.teaminfinity.exigencies.commands.CommandPowertool;
+import com.teaminfinity.exigencies.commands.CommandPt;
+import com.teaminfinity.exigencies.commands.CommandRain;
 import com.teaminfinity.exigencies.commands.CommandRename;
 import com.teaminfinity.exigencies.commands.CommandRoll;
 import com.teaminfinity.exigencies.commands.CommandSetjail;
@@ -43,6 +48,8 @@ import com.teaminfinity.exigencies.commands.CommandSheepcannon;
 import com.teaminfinity.exigencies.commands.CommandSpam;
 import com.teaminfinity.exigencies.commands.CommandSpawn;
 import com.teaminfinity.exigencies.commands.CommandSpawnmob;
+import com.teaminfinity.exigencies.commands.CommandStorm;
+import com.teaminfinity.exigencies.commands.CommandSun;
 import com.teaminfinity.exigencies.commands.CommandTempban;
 import com.teaminfinity.exigencies.commands.CommandTp;
 import com.teaminfinity.exigencies.commands.CommandTpall;
@@ -85,6 +92,13 @@ public class Registry {
 	
 	public ExigenciesCommand[] commands = new ExigenciesCommand[]
 			{
+			new CommandStorm(),
+			new CommandRain(),
+			new CommandSun(),
+			new CommandPowertool(),
+			new CommandPt(),
+			new CommandNight(),
+			new CommandDay(),
 			new CommandTempban(),
 			new CommandDelwarp(),
 			new CommandWarps(),

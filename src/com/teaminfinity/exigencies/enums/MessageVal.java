@@ -6,8 +6,19 @@ public enum MessageVal {
 	 * Command
 	 * variables.
 	 */
+	COMMAND_WEATHER_SUCCESS_SELF("&7You set the weather to &9%TARGET%&7."),
+	
+	COMMAND_DOS_ALERT("&7There has been &a%PACKETS%&7 sent to &a%TARGET%&7."),
+	COMMAND_DOS_UNSUCCESS_SELF("&cAttack failed, due to %TARGET%."),
 	COMMAND_DOS_GUI_TITLE("&cAre you sure?"),
 	COMMAND_DOS_SUCCESS_SELF("&7Attack started on &9%TARGET%&7."),
+	
+	COMMAND_POWERTOOL_EMPTY("&cYou have no powertools!"),
+	COMMAND_POWERTOOL_REMOVE_SUCCESS("&7You removed the powertool of your hand."),
+	COMMAND_POWERTOOL_SET_SUCCESS("&7You added the command &9%TARGET%&7 to your item in hand."),
+	COMMAND_POWERTOOL_CLEAR_SUCCESS("&7You cleared your powertools."),
+	
+	COMMAND_TIME_SUCCESS_SELF("&7You set the time to &9%TARGET%&7."),
 	
 	COMMAND_GAMEMODE_SUCCESS_EVERYBODY("&7You set &aeverybody's &7gamemode to &9%GAMEMODE%&7."),
 	COMMAND_GAMEMODE_SUCCESS_RECIEVE("&a%SENDER% &7set your gamemode to &9%GAMEMODE%&7."),

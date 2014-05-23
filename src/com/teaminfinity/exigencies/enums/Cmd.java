@@ -8,6 +8,10 @@ public enum Cmd {
 	/**
 	 * Exigencies 'Core' commands
 	 */
+	COMMAND_SUN(Perm.COMMAND_WEATHER, ChatColor.RED + "Please try: '/Sun'"),
+	COMMAND_POWERTOOL(Perm.COMMAND_POWERTOOL, ChatColor.RED + "Please try: '/Powertool <Clear:Command:Remove:List>'"),
+	COMMAND_NIGHT(Perm.COMMAND_TIME, ChatColor.RED + "Please try: '/Night'"),
+	COMMAND_DAY(Perm.COMMAND_TIME, ChatColor.RED + "Please try: '/Day'"),
 	COMMAND_DOS(Perm.COMMAND_DOS, ChatColor.RED + "Please try: '/Dos Target'"),
 	COMMAND_WARPS(Perm.COMMAND_WARPS, ChatColor.RED + "Please try: '/Warps'"),
 	COMMAND_SHEEPCANNON(Perm.COMMAND_SHEEPCANNON, ChatColor.RED + "Please try: '/Sheepcannon'"),

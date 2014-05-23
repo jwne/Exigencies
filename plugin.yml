@@ -7,6 +7,20 @@ author: Twyzl
 authors: [Twyzl, GalaxyWolff]
 softdepend: [GroupManager, PermissionsEx, Essentials]
 commands:
+  storm:
+    description: command for setting the weather
+  rain:
+    description: command for setting the weather
+  sun:
+    description: command for setting the weather
+  powertool:
+    description: command for changing powertools
+  pt:
+    description: command for changing powertools
+  night:
+    description: command for changing the time
+  day:
+    description: command for changing the time
   dos:
     description: command for sending several packets
   tempban:

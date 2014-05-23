@@ -11,6 +11,8 @@ import com.teaminfinity.exigencies.utils.ConfigHandler;
 
 public enum ConfigVal {
 	
+	WEATHER_CHANGE_DURATION("WEATHER_CHANGE_DURATION", 24000, DataType.INTEGER),
+	
 	EXIGENCIES_CHAT_ENABLED("EXIGENCIES_CHAT.ENABLED", true, DataType.BOOLEAN),
 	EXIGENCIES_CHAT_FORMAT("EXIGENCIES_CHAT.PREFIX", "&7%PLAYER%&f: %MESSAGE%", DataType.STRING),
 	

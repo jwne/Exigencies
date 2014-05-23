@@ -19,7 +19,7 @@ public enum SiriResponse {
 	PLAYER_GAY(SiriResponseType.PLAYER_GAY, new SiriResponseCriteria(new String[][]
 			{
 				{
-					"is", "gay"
+					"is", "gay", "?", " "
 				}
 			}
 		)),

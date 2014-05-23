@@ -11,7 +11,6 @@ import com.teaminfinity.exigencies.api.PlayerAPI;
 import com.teaminfinity.exigencies.enums.Cmd;
 import com.teaminfinity.exigencies.enums.MessageVal;
 import com.teaminfinity.exigencies.objects.command.ExigenciesCommand;
-import com.teaminfinity.exigencies.utils.Utilities;
 
 public class CommandGamemode extends ExigenciesCommand implements CommandExecutor {
 
@@ -55,7 +54,7 @@ public class CommandGamemode extends ExigenciesCommand implements CommandExecuto
 			}
 			Player player = (Player) sender;
 
-			GameMode gamemode = Utilities.getGameMode(args[0]);
+			GameMode gamemode = getGameMode(args[0]);
 			if(gamemode == null)
 			{
 				player.sendMessage(MessageAPI.getReformat(MessageVal.PLAYER_NOT_FOUND, args[0]));
@@ -66,7 +65,7 @@ public class CommandGamemode extends ExigenciesCommand implements CommandExecuto
 		}
 		else
 		{
-			GameMode gamemode = Utilities.getGameMode(args[0]);
+			GameMode gamemode = getGameMode(args[0]);
 			if(gamemode == null)
 			{
 				sender.sendMessage(MessageAPI.getReformat(MessageVal.GAMEMODE_NOT_FOUND, args[0]));
@@ -100,6 +99,29 @@ public class CommandGamemode extends ExigenciesCommand implements CommandExecuto
 		}
 
 		return false;
+	}
+	
+	protected GameMode getGameMode(String input)
+	{
+		GameMode gm = null;
+		switch(input.toLowerCase()){
+		case "0":
+		case "s":
+		case "survival":
+			gm=GameMode.SURVIVAL;
+			break;
+		case "1":
+		case "c":
+		case "creative":
+			gm = GameMode.CREATIVE;
+			break;
+		case "2":
+		case "a":
+		case "adventure":
+			gm=GameMode.ADVENTURE;
+			break;
+		}
+		return gm;
 	}
 
 }
