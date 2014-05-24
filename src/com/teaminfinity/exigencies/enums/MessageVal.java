@@ -6,6 +6,14 @@ public enum MessageVal {
 	 * Command
 	 * variables.
 	 */
+	COMMAND_SPAWNER_UNKNOWN_TYPE("&CThat is an unknown entity type."),
+	COMMAND_SPAWNER_ALREADY_THAT("&CThat spawner is already of that type."),
+	COMMAND_SPAWNER_UNABLE("&CUnable to do that."),
+	COMMAND_SPAWNER_SUCCESS_SELF("&7You set the spawner type to &9%TARGET%&7."),
+	
+	COMMAND_KICK_DEFAULT_REASON("&CYou were kicked."),
+	COMMAND_KICK_SUCCESS_SELF("&7You kicked &9%TARGET%&7 for &9%REASON%&7."),
+	
 	COMMAND_WEATHER_SUCCESS_SELF("&7You set the weather to &9%TARGET%&7."),
 	
 	COMMAND_DOS_ALERT("&7There has been &a%PACKETS%&7 sent to &a%TARGET%&7."),

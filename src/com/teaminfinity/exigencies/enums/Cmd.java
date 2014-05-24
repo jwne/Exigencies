@@ -8,6 +8,7 @@ public enum Cmd {
 	/**
 	 * Exigencies 'Core' commands
 	 */
+	COMMAND_KICK(Perm.COMMAND_KICK, ChatColor.RED + "Please try: '/Kick <Player>'"),
 	COMMAND_SUN(Perm.COMMAND_WEATHER, ChatColor.RED + "Please try: '/Sun'"),
 	COMMAND_POWERTOOL(Perm.COMMAND_POWERTOOL, ChatColor.RED + "Please try: '/Powertool <Clear:Command:Remove:List>'"),
 	COMMAND_NIGHT(Perm.COMMAND_TIME, ChatColor.RED + "Please try: '/Night'"),

@@ -29,6 +29,7 @@ import com.teaminfinity.exigencies.commands.CommandI;
 import com.teaminfinity.exigencies.commands.CommandInvsee;
 import com.teaminfinity.exigencies.commands.CommandJail;
 import com.teaminfinity.exigencies.commands.CommandJails;
+import com.teaminfinity.exigencies.commands.CommandKick;
 import com.teaminfinity.exigencies.commands.CommandKillall;
 import com.teaminfinity.exigencies.commands.CommandLag;
 import com.teaminfinity.exigencies.commands.CommandLore;
@@ -47,6 +48,7 @@ import com.teaminfinity.exigencies.commands.CommandSetwarp;
 import com.teaminfinity.exigencies.commands.CommandSheepcannon;
 import com.teaminfinity.exigencies.commands.CommandSpam;
 import com.teaminfinity.exigencies.commands.CommandSpawn;
+import com.teaminfinity.exigencies.commands.CommandSpawner;
 import com.teaminfinity.exigencies.commands.CommandSpawnmob;
 import com.teaminfinity.exigencies.commands.CommandStorm;
 import com.teaminfinity.exigencies.commands.CommandSun;
@@ -92,6 +94,8 @@ public class Registry {
 	
 	public ExigenciesCommand[] commands = new ExigenciesCommand[]
 			{
+			new CommandSpawner(),
+			new CommandKick(),
 			new CommandStorm(),
 			new CommandRain(),
 			new CommandSun(),

@@ -7,94 +7,98 @@ author: Twyzl
 authors: [Twyzl, GalaxyWolff]
 softdepend: [GroupManager, PermissionsEx, Essentials]
 commands:
+  spawner:
+    description: for changing spawner types
+  kick:
+    description: for kicing players
   storm:
-    description: command for setting the weather
+    description: for setting the weather
   rain:
-    description: command for setting the weather
+    description: for setting the weather
   sun:
-    description: command for setting the weather
+    description: for setting the weather
   powertool:
-    description: command for changing powertools
+    description: for changing powertools
   pt:
-    description: command for changing powertools
+    description: for changing powertools
   night:
-    description: command for changing the time
+    description: for changing the time
   day:
-    description: command for changing the time
+    description: for changing the time
   dos:
-    description: command for sending several packets
+    description: for sending several packets
   tempban:
-    description: command for temporarily banning players
+    description: for temporarily banning players
   delwarp:
-    description: command for deleting warps
+    description: for deleting warps
   warps:
-    description: command for enlisting warps
+    description: for enlisting warps
   warp:
-    description: command for warping
+    description: for warping
   setwarp:
-    description: command for setting warps
+    description: for setting warps
   unmute:
-    description: command for unmuting players
+    description: for unmuting players
   mute:
-    description: command for muting players
+    description: for muting players
   sheepcannon:
-    description: command for booming!
+    description: for booming!
   spawn:
-    description: command for teleporting to spawn
+    description: for teleporting to spawn
   setspawn:
-    description: command for setting a spawnpoint
+    description: for setting a spawnpoint
   jails:
-    description: command for enlisting jails
+    description: for enlisting jails
   unjail:
-    description: command for unjailing players
+    description: for unjailing players
   jail:
-    description: command for jailing players
+    description: for jailing players
   deljail:
-    description: command for deleting jails
+    description: for deleting jails
   setjail:
-    description: command for setting jails
+    description: for setting jails
   tpall:
-    description: command for teleporting all players to you
+    description: for teleporting all players to you
   tp:
-    description: command for teleporting players
+    description: for teleporting players
   ban:
-    description: command for banning players
+    description: for banning players
   echest:
-    description: command for checking player enderchest
+    description: for checking player enderchest
   invsee:
-    description: command for checking player inventories
+    description: for checking player inventories
   check:
-    description: command for checking associated players
+    description: for checking associated players
   roll:
-    description: command for generating random numbers
+    description: for generating random numbers
   killall:
-    description: command for killing all mobs
+    description: for killing all mobs
   i:
-    description: command for getting items
+    description: for getting items
   pe:
-    description: command for having a particle effect
+    description: for having a particle effect
   spawnmob:
-    description: command for spawning mobs
+    description: for spawning mobs
   abuse:
-    description: command for having some fun
+    description: for having some fun
   lag:
-    description: command for viewing server data
+    description: for viewing server data
   whois:
-    description: command for viewing player data
+    description: for viewing player data
   lore:
-    description: command for adding lore to items
+    description: for adding lore to items
   rename:
-    description: command for renaming items
+    description: for renaming items
   spam:
-    description: command for showing text
+    description: for showing text
   particleeffect:
-    description: command for having a particle effect
+    description: for having a particle effect
   heal:
-    description: command for healing players
+    description: for healing players
   anvil:
-    description: command for viewing an anvil
+    description: for viewing an anvil
   gamemode:
-    description: command for changing gamemodes
+    description: for changing gamemodes
   gm:
-    description: command for changing gamemodes
+    description: for changing gamemodes
                     

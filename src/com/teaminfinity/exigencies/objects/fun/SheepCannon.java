@@ -34,6 +34,7 @@ public class SheepCannon implements BetterRunnable {
 	@Override
 	public void run() 
 	{
+		sheep.setColor(DyeColor.values()[RandomManager.nextInt(DyeColor.values().length)]);
 		life++;
 		if(life >= 50000)
 		{

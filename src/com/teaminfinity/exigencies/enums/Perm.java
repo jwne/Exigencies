@@ -11,6 +11,7 @@ public enum Perm {
 	COLOR_SIGN("exigencies.color.sign"),
 	COLOR_CHAT("exigencies.color.chat"),
 	
+	COMMAND_KICK("exigencies.kick"),
 	COMMAND_WEATHER("exigencies.weather"),
 	COMMAND_POWERTOOL("exigencies.powertool"),
 	COMMAND_TIME("exigencies.time"),
