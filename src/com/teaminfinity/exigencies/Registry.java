@@ -22,6 +22,8 @@ import com.teaminfinity.exigencies.commands.CommandDeljail;
 import com.teaminfinity.exigencies.commands.CommandDelwarp;
 import com.teaminfinity.exigencies.commands.CommandDos;
 import com.teaminfinity.exigencies.commands.CommandEchest;
+import com.teaminfinity.exigencies.commands.CommandEx;
+import com.teaminfinity.exigencies.commands.CommandExigencies;
 import com.teaminfinity.exigencies.commands.CommandGamemode;
 import com.teaminfinity.exigencies.commands.CommandGm;
 import com.teaminfinity.exigencies.commands.CommandHeal;
@@ -60,6 +62,7 @@ import com.teaminfinity.exigencies.commands.CommandUnmute;
 import com.teaminfinity.exigencies.commands.CommandWarp;
 import com.teaminfinity.exigencies.commands.CommandWarps;
 import com.teaminfinity.exigencies.commands.CommandWhois;
+import com.teaminfinity.exigencies.commands.CommandWitherskull;
 import com.teaminfinity.exigencies.enums.ConfigVal;
 import com.teaminfinity.exigencies.gui.ExigenciesGUI;
 import com.teaminfinity.exigencies.gui.GUIHandler;
@@ -94,6 +97,9 @@ public class Registry {
 	
 	public ExigenciesCommand[] commands = new ExigenciesCommand[]
 			{
+			new CommandWitherskull(),
+			new CommandExigencies(),
+			new CommandEx(),
 			new CommandSpawner(),
 			new CommandKick(),
 			new CommandStorm(),
@@ -187,7 +193,6 @@ public class Registry {
 		if(ConfigVal.PARTICLE_EFFECT_TASK_ENABLED.getBooleanValue())
 		{
 			ParticleEffectTask.init();
-			ParticleEffectAPI.init();
 			SchedulingUtility.beginRepeating(new ParticleEffectTask(), ConfigVal.PARTICLE_EFFECT_TASK_DELAY
 					.getIntegerValue());
 		}
@@ -197,6 +202,7 @@ public class Registry {
 		TipAPI.init();
 		JailAPI.init();
 		LogAPI.init();
+		ParticleEffectAPI.init();
 		WarpAPI.init();
 	}
 	

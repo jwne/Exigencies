@@ -6,6 +6,9 @@ public enum MessageVal {
 	 * Command
 	 * variables.
 	 */
+	COMMAND_EX_UPDATE_STARTED("&7You have started the download of &9Exigencies &7v&a%TARGET%&7."),
+	COMMAND_EX_UPDATE_DONE("&CAn update has already been performed. You should restart the server."),
+	
 	COMMAND_SPAWNER_UNKNOWN_TYPE("&CThat is an unknown entity type."),
 	COMMAND_SPAWNER_ALREADY_THAT("&CThat spawner is already of that type."),
 	COMMAND_SPAWNER_UNABLE("&CUnable to do that."),

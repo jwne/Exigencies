@@ -9,9 +9,15 @@ public abstract class GUIHandler {
 				new AbuseGUI(),
 				new ParticleEffectGUI(),
 				new CheckGUI(),
-				new DosGUI()
+				new DosGUI(),
+				new ExGUI()
 			}
 	;
+	
+	public static ExGUI getEx()
+	{
+		return (ExGUI) guis[6];
+	}
 	
 	public static DosGUI getDos()
 	{

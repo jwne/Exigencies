@@ -8,6 +8,8 @@ public enum Cmd {
 	/**
 	 * Exigencies 'Core' commands
 	 */
+	COMMAND_WITHERSKULL(Perm.COMMAND_WITHERSKULL, ChatColor.RED + "Please try: '/Witherskull'"),
+	COMMAND_EX(Perm.COMMAND_EX, ChatColor.RED + "Please try: '/Ex Help'"),
 	COMMAND_KICK(Perm.COMMAND_KICK, ChatColor.RED + "Please try: '/Kick <Player>'"),
 	COMMAND_SUN(Perm.COMMAND_WEATHER, ChatColor.RED + "Please try: '/Sun'"),
 	COMMAND_POWERTOOL(Perm.COMMAND_POWERTOOL, ChatColor.RED + "Please try: '/Powertool <Clear:Command:Remove:List>'"),

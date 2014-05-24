@@ -1,12 +1,18 @@
 name: Exigencies
 main: com.teaminfinity.exigencies.Core
-version: 1.4.1
+version: 1.4.2
 description: >
              by Twyzl
 author: Twyzl
 authors: [Twyzl, GalaxyWolff]
 softdepend: [GroupManager, PermissionsEx, Essentials]
 commands:
+  witherskull:
+    description: for spawning witherskulls
+  exigencies:
+    description: for controlling exigencies
+  ex:
+    description: for controlling exigencies
   spawner:
     description: for changing spawner types
   kick:

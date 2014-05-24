@@ -2,19 +2,19 @@ package com.teaminfinity.exigencies.developer;
 
 import java.util.UUID;
 
+import org.bukkit.Bukkit;
+
 import com.teaminfinity.exigencies.Core;
+import com.teaminfinity.exigencies.Updater;
 import com.teaminfinity.exigencies.api.PlayerAPI;
 
 public class Exigencies {
 
-	/**
-	 * Central data store for all
-	 * developers.
-	 */
 	public Exigencies()
 	{
+		this.setNmsCompatible(checkCompat());
 	}
-
+	
 	/**
 	 * 
 	 * @param name necessary name of the user
@@ -41,6 +41,20 @@ public class Exigencies {
 		return new ExigenciesUser(id);
 	}
 	
+	private transient final String edition = "R1";
+	private transient final String version = "1.7";
+	
+	private boolean checkCompat()
+	{
+		return matchesVersion(edition) && matchesVersion(version);
+	}
+	
+    public static boolean matchesVersion(String s){
+        return Bukkit.getVersion().contains(s)
+        		|| Bukkit.getServer().getClass().getPackage().getName().toLowerCase()
+        		.contains(s.toLowerCase());
+    }
+	
 	private transient boolean nmsCompatible = true;
 	
 	/**
@@ -57,6 +71,38 @@ public class Exigencies {
 		this.nmsCompatible = nmsCompatible;
 	}
 	
+	private transient Updater updater = null;
+
+	public boolean canUpdate()
+	{
+		return updater.getResult().equals(
+				Updater.UpdateResult.UPDATE_AVAILABLE);
+	}
+	
+	public Updater.UpdateResult getUpdateResult() 
+	{
+		return updater.getResult();
+	}
+
+	public void setUpdater(Updater updater)
+	{
+		this.updater = updater;
+	}
+	
+	public Updater getUpdater()
+	{
+		return updater;
+	}
+
+	public String getLatestVersion() 
+	{
+		if(updater.getLatestVersionString() == null)
+		{
+			return Core.instance.getDescription().getVersion();
+		}
+		return updater.getLatestVersionString();
+	}
+
 	/**
 	 * A very sloppy method for getting the exigencies
 	 * instance, but it can be more concise.

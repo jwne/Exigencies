@@ -83,7 +83,8 @@ public class ParticleEffectGUI implements ExigenciesGUI {
 			Player player = (Player) e.getWhoClicked();
 			ParticleEffectAPI.setForPlayer(player, particle);
 			player.sendMessage(MessageVal.COMMAND_PARTICLEEFFECT_SUCCESS.getValue()
-					.replaceAll("%PARTICLE%", particle.toString().toLowerCase()));
+					.replaceAll("%PARTICLE%", particle.toString().toLowerCase())
+					.replaceAll("_", " "));
 		}
 	}
 
