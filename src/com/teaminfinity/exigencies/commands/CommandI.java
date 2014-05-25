@@ -1,5 +1,6 @@
 package com.teaminfinity.exigencies.commands;
 
+import org.bukkit.Material;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
@@ -41,6 +42,11 @@ public class CommandI extends ExigenciesCommand implements CommandExecutor {
 		Player player = (Player) sender;
 		ItemInfo iteminfo = Items.itemByName(args[0]);
 		if(iteminfo == null)
+		{
+			player.sendMessage(MessageAPI.getReformat(MessageVal.ITEM_NOT_FOUND, args[0]));
+			return false;
+		}
+		if(iteminfo.getType().equals(Material.AIR))
 		{
 			player.sendMessage(MessageAPI.getReformat(MessageVal.ITEM_NOT_FOUND, args[0]));
 			return false;

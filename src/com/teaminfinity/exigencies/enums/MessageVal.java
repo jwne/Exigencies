@@ -6,6 +6,8 @@ public enum MessageVal {
 	 * Command
 	 * variables.
 	 */
+	COMMANDS_R_NO_TARGET("&CYou do not have a reply target."),
+	
 	COMMAND_MSG_WORD_YOU("You"),
 	COMMAND_MSG_FORMAT("&9%TARGET%&7 to &9%TARGET2%&7: %MESSAGE%"),
 	

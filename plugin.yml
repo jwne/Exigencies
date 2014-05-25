@@ -7,6 +7,10 @@ author: Twyzl
 authors: [Twyzl, GalaxyWolff]
 softdepend: [GroupManager, PermissionsEx, Essentials]
 commands:
+  reply:
+    description: for messaging players
+  r:
+    description: for messaging players
   message:
     description: for messaging players
   w:
