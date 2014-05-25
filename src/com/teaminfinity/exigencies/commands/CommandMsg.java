@@ -8,12 +8,14 @@ import com.teaminfinity.exigencies.api.MessageAPI;
 import com.teaminfinity.exigencies.api.PlayerAPI;
 import com.teaminfinity.exigencies.enums.Cmd;
 import com.teaminfinity.exigencies.enums.MessageVal;
+import com.teaminfinity.exigencies.enums.Perm;
 import com.teaminfinity.exigencies.objects.command.ExigenciesCommand;
+import com.teaminfinity.exigencies.objects.command.MessageFactory;
 
-public class CommandKick extends ExigenciesCommand implements CommandExecutor {
+public class CommandMsg extends ExigenciesCommand implements CommandExecutor {
 
-	public CommandKick() {
-		super("Kick", Cmd.COMMAND_KICK);
+	public CommandMsg() {
+		super("Msg", Cmd.COMMAND_MSG);
 	}
 
 	@Override
@@ -24,39 +26,37 @@ public class CommandKick extends ExigenciesCommand implements CommandExecutor {
 			sender.sendMessage(MessageVal.NO_PERMISSION.getValue());
 			return false;
 		}
-		
-		if(args.length < 1)
+
+		if(args.length < 2)
 		{
 			sender.sendMessage(super.getCommandExample().usage);
 			return false;
 		}
-		
+
 		Player target = PlayerAPI.getPlayer(args[0]);
 		if(target == null)
 		{
 			sender.sendMessage(MessageAPI.getReformat(MessageVal.PLAYER_NOT_FOUND, args[0]));
 			return false;
 		}
-		
-		String reason = MessageVal.COMMAND_KICK_DEFAULT_REASON.getValue();
-		
-		if(args.length > 1)
+
+		String msg = MessageVal.COLOR_SECONDARY.getValue();
+		for(int i = 1; i < args.length; i ++)
 		{
-			reason = MessageVal.COLOR_SECONDARY.getValue();
-			for(int i = 1; i < args.length; i ++)
-			{
-				reason += args[i] + " ";
-			}
-			reason = MessageAPI.removeLastChar(reason);
+			msg += args[i] + " ";
 		}
+		msg = MessageAPI.removeLastChar(msg);
 		
-		target.kickPlayer(reason);
-		sender.sendMessage(MessageAPI.getReformat(MessageVal.COMMAND_KICK_SUCCESS_SELF, 
-				PlayerAPI.getName(target)).replaceAll("%REASON%", reason));
-		
+		if(Perm.COLOR_CHAT.hasPermission(sender))
+		{
+			msg = MessageAPI.addColour(msg);
+		}
+
+		new MessageFactory(sender, target, msg);
+
 		return false;
 	}
-	
-	
+
+
 
 }

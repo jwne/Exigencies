@@ -1,5 +1,6 @@
 package com.teaminfinity.exigencies.api;
 
+import java.util.HashMap;
 import java.util.UUID;
 
 import org.bukkit.Bukkit;
@@ -12,6 +13,22 @@ import com.teaminfinity.exigencies.objects.F;
 
 public class PlayerAPI {
 
+	private static transient HashMap<CommandSender, CommandSender> latestReply = new HashMap<CommandSender, CommandSender>();
+	
+	public static CommandSender getLatestReply(CommandSender sender)
+	{
+		if(!(latestReply.containsKey(sender)))
+		{
+			return null;
+		}
+		return latestReply.get(sender);
+	}
+	
+	public static void addLatestReply(CommandSender sender, CommandSender dat)
+	{
+		latestReply.put(sender, dat);
+	}
+	
 	public static void messageStaff(String message)
 	{
 		for(Player player : Bukkit.getOnlinePlayers())

@@ -41,8 +41,8 @@ public class Exigencies {
 		return new ExigenciesUser(id);
 	}
 	
-	private transient final String edition = "R1";
-	private transient final String version = "1.7";
+	private transient final String edition = "2";
+	private transient final String version = "1_7";
 	
 	private boolean checkCompat()
 	{
@@ -50,7 +50,7 @@ public class Exigencies {
 	}
 	
     public static boolean matchesVersion(String s){
-        return Bukkit.getVersion().contains(s)
+    	return Bukkit.getVersion().contains(s)
         		|| Bukkit.getServer().getClass().getPackage().getName().toLowerCase()
         		.contains(s.toLowerCase());
     }

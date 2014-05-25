@@ -35,6 +35,8 @@ import com.teaminfinity.exigencies.commands.CommandKick;
 import com.teaminfinity.exigencies.commands.CommandKillall;
 import com.teaminfinity.exigencies.commands.CommandLag;
 import com.teaminfinity.exigencies.commands.CommandLore;
+import com.teaminfinity.exigencies.commands.CommandMessage;
+import com.teaminfinity.exigencies.commands.CommandMsg;
 import com.teaminfinity.exigencies.commands.CommandMute;
 import com.teaminfinity.exigencies.commands.CommandNight;
 import com.teaminfinity.exigencies.commands.CommandParticleeffect;
@@ -54,13 +56,17 @@ import com.teaminfinity.exigencies.commands.CommandSpawner;
 import com.teaminfinity.exigencies.commands.CommandSpawnmob;
 import com.teaminfinity.exigencies.commands.CommandStorm;
 import com.teaminfinity.exigencies.commands.CommandSun;
+import com.teaminfinity.exigencies.commands.CommandTell;
 import com.teaminfinity.exigencies.commands.CommandTempban;
 import com.teaminfinity.exigencies.commands.CommandTp;
 import com.teaminfinity.exigencies.commands.CommandTpall;
+import com.teaminfinity.exigencies.commands.CommandUnban;
 import com.teaminfinity.exigencies.commands.CommandUnjail;
 import com.teaminfinity.exigencies.commands.CommandUnmute;
+import com.teaminfinity.exigencies.commands.CommandW;
 import com.teaminfinity.exigencies.commands.CommandWarp;
 import com.teaminfinity.exigencies.commands.CommandWarps;
+import com.teaminfinity.exigencies.commands.CommandWhisper;
 import com.teaminfinity.exigencies.commands.CommandWhois;
 import com.teaminfinity.exigencies.commands.CommandWitherskull;
 import com.teaminfinity.exigencies.enums.ConfigVal;
@@ -91,12 +97,18 @@ public class Registry {
 			new MovementStopper(),
 			new PlayerListener.ColorListener(),
 			new LoggerListener(),
-			new SiriListener()
+			new SiriListener(),
 			}
 	;
 	
 	public ExigenciesCommand[] commands = new ExigenciesCommand[]
 			{
+			new CommandMessage(),
+			new CommandMsg(),
+			new CommandWhisper(),
+			new CommandW(),
+			new CommandTell(),
+			new CommandUnban(),
 			new CommandWitherskull(),
 			new CommandExigencies(),
 			new CommandEx(),

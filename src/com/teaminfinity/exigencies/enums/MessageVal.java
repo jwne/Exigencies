@@ -6,6 +6,12 @@ public enum MessageVal {
 	 * Command
 	 * variables.
 	 */
+	COMMAND_MSG_WORD_YOU("You"),
+	COMMAND_MSG_FORMAT("&9%TARGET%&7 to &9%TARGET2%&7: %MESSAGE%"),
+	
+	COMMAND_UNBAN_NOT_BANNED("&CThat player isn't banned."),
+	COMMAND_UNBAN_SUCCESS_SELF("&7You unbanned &9%TARGET%&7."),
+	
 	COMMAND_EX_UPDATE_STARTED("&7You have started the download of &9Exigencies &7v&a%TARGET%&7."),
 	COMMAND_EX_UPDATE_DONE("&CAn update has already been performed. You should restart the server."),
 	

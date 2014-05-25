@@ -7,6 +7,18 @@ author: Twyzl
 authors: [Twyzl, GalaxyWolff]
 softdepend: [GroupManager, PermissionsEx, Essentials]
 commands:
+  message:
+    description: for messaging players
+  w:
+    description: for messaging players
+  tell:
+    description: for messaging players
+  whisper:
+    description: for messaging players
+  msg:
+    description: for messaging players
+  unban:
+    description: for unbanning players
   witherskull:
     description: for spawning witherskulls
   exigencies:
