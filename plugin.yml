@@ -7,6 +7,10 @@ author: Twyzl
 authors: [Twyzl, GalaxyWolff]
 softdepend: [GroupManager, PermissionsEx, Essentials]
 commands:
+  reaper:
+    description: for summoning the reaper
+  ride:
+    description: for riding players
   reply:
     description: for messaging players
   r:

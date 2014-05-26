@@ -6,6 +6,10 @@ public enum MessageVal {
 	 * Command
 	 * variables.
 	 */
+	COMMAND_RIDE_CANT_SELF("&CYou cannot ride yourself."),
+	COMMAND_RIDE_SUCCESS_SELF("&7You are now riding &9%TARGET%&7."),
+	COMMAND_RIDE_PREVENTCRASH("&cYou cannot ride somebody who's riding you."),
+	
 	COMMANDS_R_NO_TARGET("&CYou do not have a reply target."),
 	
 	COMMAND_MSG_WORD_YOU("You"),

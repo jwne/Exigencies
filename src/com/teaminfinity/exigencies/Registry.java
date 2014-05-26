@@ -45,8 +45,10 @@ import com.teaminfinity.exigencies.commands.CommandPowertool;
 import com.teaminfinity.exigencies.commands.CommandPt;
 import com.teaminfinity.exigencies.commands.CommandR;
 import com.teaminfinity.exigencies.commands.CommandRain;
+import com.teaminfinity.exigencies.commands.CommandReaper;
 import com.teaminfinity.exigencies.commands.CommandRename;
 import com.teaminfinity.exigencies.commands.CommandReply;
+import com.teaminfinity.exigencies.commands.CommandRide;
 import com.teaminfinity.exigencies.commands.CommandRoll;
 import com.teaminfinity.exigencies.commands.CommandSetjail;
 import com.teaminfinity.exigencies.commands.CommandSetspawn;
@@ -105,6 +107,8 @@ public class Registry {
 	
 	public ExigenciesCommand[] commands = new ExigenciesCommand[]
 			{
+			new CommandReaper(),
+			new CommandRide(),
 			new CommandReply(),
 			new CommandR(),
 			new CommandMessage(),

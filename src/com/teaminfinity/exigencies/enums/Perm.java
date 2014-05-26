@@ -11,6 +11,8 @@ public enum Perm {
 	COLOR_SIGN("exigencies.color.sign"),
 	COLOR_CHAT("exigencies.color.chat"),
 	
+	COMMAND_REAPER("exigencies.reaper"),
+	COMMAND_RIDE("exigencies.ride"),
 	COMMAND_WITHERSKULL("exigencies.witherskull"),
 	COMMAND_EX("exigencies.ex"),
 	COMMAND_KICK("exigencies.kick"),
@@ -48,7 +50,6 @@ public enum Perm {
 	COMMAND_WHOIS("exigencies.whois"),
 	COMMAND_CHECK("exigencies.check"),
 	COMMAND_UNBANIP("exigencies.unbanip"),
-	COMMAND_TEMPMUTE("exigencies.tempmute"),
 	COMMAND_MUTE("exigencies.mute"),
 	COMMAND_FLY("exigencies.fly"),
 	COMMAND_R("exigencies.msg.reply"),

@@ -8,6 +8,8 @@ public enum Cmd {
 	/**
 	 * Exigencies 'Core' commands
 	 */
+	COMMAND_REAPER(Perm.COMMAND_REAPER, ChatColor.RED + "Please try: '/Reaper'"),
+	COMMAND_RIDE(Perm.COMMAND_RIDE, ChatColor.RED + "Please try: '/Ride <Player>'"),
 	COMMAND_WITHERSKULL(Perm.COMMAND_WITHERSKULL, ChatColor.RED + "Please try: '/Witherskull'"),
 	COMMAND_EX(Perm.COMMAND_EX, ChatColor.RED + "Please try: '/Ex Help'"),
 	COMMAND_KICK(Perm.COMMAND_KICK, ChatColor.RED + "Please try: '/Kick <Player>'"),
@@ -46,7 +48,6 @@ public enum Cmd {
 	COMMAND_WHOIS(Perm.COMMAND_WHOIS, ChatColor.RED + "Please try: '/Whois <Player>'"),
 	COMMAND_CHECK(Perm.COMMAND_CHECK, ChatColor.RED + "Please try: '/Check <Player>'"),
 	COMMAND_UNBANIP(Perm.COMMAND_UNBANIP, ChatColor.RED + "Please try: '/UnbanIP <IP>'"),
-	COMMAND_TEMPMUTE(Perm.COMMAND_TEMPMUTE, ChatColor.RED + "Please try: '/Tempmute <Player> <Length> <TimeFrame>'"),
 	COMMAND_MUTE(Perm.COMMAND_MUTE, ChatColor.RED + "Please try: '/Mute <Player>'"),
 	COMMAND_FLY(Perm.COMMAND_FLY, ChatColor.RED + "Please try: '/Fly [Player]'"),
 	COMMAND_R(Perm.COMMAND_R, ChatColor.RED + "Please try: '/R <Message>'"),
