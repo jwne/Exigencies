@@ -6,6 +6,14 @@ public enum MessageVal {
 	 * Command
 	 * variables.
 	 */
+	COMMAND_ADMINCHAT_PREFIX("&9[AdminChat]&7 "),
+	COMMAND_ADMINCHAT_SUCCESS_SELF("&7You toggled admin chat."),
+	
+	COMMAND_BACK_NO_PREVIOUS("&CYou do not have a previous location."),
+	COMMAND_BACK_SUCCESS_SELF("&7You teleported to &9previous location&7."),
+	
+	COMMAND_RESETCHUNK_SUCCESS_SELF("&7You reset the chunk at &9%TARGET%&7."),
+	
 	COMMAND_RIDE_CANT_SELF("&CYou cannot ride yourself."),
 	COMMAND_RIDE_SUCCESS_SELF("&7You are now riding &9%TARGET%&7."),
 	COMMAND_RIDE_PREVENTCRASH("&cYou cannot ride somebody who's riding you."),

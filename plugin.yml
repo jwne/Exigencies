@@ -7,6 +7,16 @@ author: Twyzl
 authors: [Twyzl, GalaxyWolff]
 softdepend: [GroupManager, PermissionsEx, Essentials]
 commands:
+  ac:
+    description: for talking with fellow admins
+  return:
+    description: for teleporting to a previous location
+  adminchat:
+    description: for talking with fellow admins
+  back:
+    description: for teleporting to a previous location
+  resetchunk:
+    description: for resetting chunks
   reaper:
     description: for summoning the reaper
   ride:

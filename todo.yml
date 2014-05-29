@@ -1,2 +1,4 @@
 must change tempbancreator + permbancreator aswell as tempban and ban
 to use uuid in 1.8
+
+/admin <player> - kick,ban, etc

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.SignChangeEvent;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
@@ -12,11 +13,14 @@ import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerKickEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.event.player.PlayerTeleportEvent;
+import org.bukkit.event.player.PlayerTeleportEvent.TeleportCause;
 
 import com.teaminfinity.exigencies.Core;
 import com.teaminfinity.exigencies.api.FileAPI;
 import com.teaminfinity.exigencies.api.IpAPI;
 import com.teaminfinity.exigencies.api.MessageAPI;
+import com.teaminfinity.exigencies.api.PersistenceAPI;
 import com.teaminfinity.exigencies.api.PowerToolAPI;
 import com.teaminfinity.exigencies.enums.ConfigVal;
 import com.teaminfinity.exigencies.enums.MessageVal;
@@ -42,6 +46,24 @@ public class PlayerListener implements Listener {
 		if(ConfigVal.FIRST_JOIN_MESSAGE_ENABLED.getBooleanValue())
 		{
 			Bukkit.broadcastMessage(MessageAPI.getReformat(MessageVal.FIRST_LOGIN_MESSAGE, e.getPlayer()));
+		}
+	}
+	
+	@EventHandler (priority = EventPriority.HIGHEST)
+	public void onPlayerTeleport(PlayerTeleportEvent e)
+	{
+		if(e.isCancelled())
+		{
+			return;
+		}
+		if(e.getCause().equals(TeleportCause.COMMAND) 
+				|| e.getCause().equals(TeleportCause.UNKNOWN)
+				|| e.getCause().equals(TeleportCause.PLUGIN))
+		{
+			F file = FileAPI.getFileForPlayer(e.getPlayer());
+			file.loadFile();
+			file.set("last_tp", PersistenceAPI.getLocation().toStringValue(e.getFrom()));
+			file.saveFile();
 		}
 	}
 	

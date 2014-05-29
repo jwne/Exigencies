@@ -11,6 +11,9 @@ public enum Perm {
 	COLOR_SIGN("exigencies.color.sign"),
 	COLOR_CHAT("exigencies.color.chat"),
 	
+	COMMAND_ADMINCHAT("exigencies.adminchat"),
+	COMMAND_BACK("exigencies.back"),
+	COMMAND_RESETCHUNK("exigencies.resetchunk"),
 	COMMAND_REAPER("exigencies.reaper"),
 	COMMAND_RIDE("exigencies.ride"),
 	COMMAND_WITHERSKULL("exigencies.witherskull"),

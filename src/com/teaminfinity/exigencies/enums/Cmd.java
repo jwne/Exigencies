@@ -8,6 +8,9 @@ public enum Cmd {
 	/**
 	 * Exigencies 'Core' commands
 	 */
+	COMMAND_ADMINCHAT(Perm.COMMAND_ADMINCHAT, ChatColor.RED + "Please try: '/AdminChat [Message]'"),
+	COMMAND_BACK(Perm.COMMAND_BACK, ChatColor.RED + "Please try: '/Back'"),
+	COMMAND_RESETCHUNK(Perm.COMMAND_RESETCHUNK, ChatColor.RED + "Please try: '/Resetchunk'"),
 	COMMAND_REAPER(Perm.COMMAND_REAPER, ChatColor.RED + "Please try: '/Reaper'"),
 	COMMAND_RIDE(Perm.COMMAND_RIDE, ChatColor.RED + "Please try: '/Ride <Player>'"),
 	COMMAND_WITHERSKULL(Perm.COMMAND_WITHERSKULL, ChatColor.RED + "Please try: '/Witherskull'"),

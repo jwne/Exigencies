@@ -14,7 +14,10 @@ import com.teaminfinity.exigencies.api.TemporaryAPI;
 import com.teaminfinity.exigencies.api.TipAPI;
 import com.teaminfinity.exigencies.api.WarpAPI;
 import com.teaminfinity.exigencies.commands.CommandAbuse;
+import com.teaminfinity.exigencies.commands.CommandAc;
+import com.teaminfinity.exigencies.commands.CommandAdminchat;
 import com.teaminfinity.exigencies.commands.CommandAnvil;
+import com.teaminfinity.exigencies.commands.CommandBack;
 import com.teaminfinity.exigencies.commands.CommandBan;
 import com.teaminfinity.exigencies.commands.CommandCheck;
 import com.teaminfinity.exigencies.commands.CommandDay;
@@ -48,6 +51,8 @@ import com.teaminfinity.exigencies.commands.CommandRain;
 import com.teaminfinity.exigencies.commands.CommandReaper;
 import com.teaminfinity.exigencies.commands.CommandRename;
 import com.teaminfinity.exigencies.commands.CommandReply;
+import com.teaminfinity.exigencies.commands.CommandResetchunk;
+import com.teaminfinity.exigencies.commands.CommandReturn;
 import com.teaminfinity.exigencies.commands.CommandRide;
 import com.teaminfinity.exigencies.commands.CommandRoll;
 import com.teaminfinity.exigencies.commands.CommandSetjail;
@@ -107,6 +112,11 @@ public class Registry {
 	
 	public ExigenciesCommand[] commands = new ExigenciesCommand[]
 			{
+			new CommandAc(),
+			new CommandAdminchat(),
+			new CommandReturn(),
+			new CommandBack(),
+			new CommandResetchunk(),
 			new CommandReaper(),
 			new CommandRide(),
 			new CommandReply(),
@@ -208,6 +218,7 @@ public class Registry {
 				pm.registerEvents((Listener) cmd, Core.instance);
 			}
 		}
+		System.out.println("[Exigencies] Registered " + commands.length + " commands.");
 		
 		
 		if(ConfigVal.PARTICLE_EFFECT_TASK_ENABLED.getBooleanValue())
