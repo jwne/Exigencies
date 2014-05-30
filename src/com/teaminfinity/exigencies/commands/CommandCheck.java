@@ -4,8 +4,6 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-import com.teaminfinity.exigencies.api.MessageAPI;
-import com.teaminfinity.exigencies.api.PlayerAPI;
 import com.teaminfinity.exigencies.enums.Cmd;
 import com.teaminfinity.exigencies.enums.MessageVal;
 import com.teaminfinity.exigencies.objects.command.CheckDaemon;
@@ -33,20 +31,7 @@ public class CommandCheck extends ExigenciesCommand implements CommandExecutor {
 		
 		Player player = (Player) sender;
 		
-		if(args.length == 0)
-		{
-			player.sendMessage(super.getCommandExample().usage);
-			return false;
-		}
-		
-		Player target = PlayerAPI.getPlayer(args[0]);
-		if(target == null)
-		{
-			player.sendMessage(MessageAPI.getReformat(MessageVal.PLAYER_NOT_FOUND, args[0]));
-			return false;
-		}
-		
-		new CheckDaemon(player.getUniqueId(), target.getName());
+		new CheckDaemon(player.getUniqueId(), args[0]);
 		
 		return false;
 	}

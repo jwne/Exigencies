@@ -12,11 +12,11 @@ import com.teaminfinity.exigencies.api.MessageAPI;
 import com.teaminfinity.exigencies.api.PlayerAPI;
 import com.teaminfinity.exigencies.enums.MessageVal;
 import com.teaminfinity.exigencies.gui.GUIHandler;
-import com.teaminfinity.exigencies.objects.BetterRunnable;
+import com.teaminfinity.exigencies.objects.ExigenciesRunnable;
 import com.teaminfinity.exigencies.objects.F;
 import com.teaminfinity.exigencies.utils.SchedulingUtility;
 
-public class CheckDaemon implements BetterRunnable {
+public class CheckDaemon implements ExigenciesRunnable {
 
 	private final transient int DELAY = 10;
 	private final transient int LOOP_THROUGHS = 20;

@@ -10,11 +10,11 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import com.teaminfinity.exigencies.enums.Particle;
-import com.teaminfinity.exigencies.objects.BetterRunnable;
+import com.teaminfinity.exigencies.objects.ExigenciesRunnable;
 import com.teaminfinity.exigencies.utils.RandomManager;
 import com.teaminfinity.exigencies.utils.SchedulingUtility;
 
-public class SheepCannon implements BetterRunnable {
+public class SheepCannon implements ExigenciesRunnable {
 
 	private transient int life = 0;
 	private transient int taskId;

@@ -19,11 +19,11 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
 import com.teaminfinity.exigencies.Core;
-import com.teaminfinity.exigencies.objects.BetterRunnable;
+import com.teaminfinity.exigencies.objects.ExigenciesRunnable;
 import com.teaminfinity.exigencies.utils.RandomManager;
 import com.teaminfinity.exigencies.utils.SchedulingUtility;
 
-public class Reaper implements BetterRunnable {
+public class Reaper implements ExigenciesRunnable {
 
 	private transient Skeleton reaper;
 	private transient int taskId;
