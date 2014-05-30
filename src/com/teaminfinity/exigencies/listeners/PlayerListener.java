@@ -48,7 +48,7 @@ public class PlayerListener implements Listener {
 			Bukkit.broadcastMessage(MessageAPI.getReformat(MessageVal.FIRST_LOGIN_MESSAGE, e.getPlayer()));
 		}
 	}
-	
+
 	@EventHandler (priority = EventPriority.HIGHEST)
 	public void onPlayerTeleport(PlayerTeleportEvent e)
 	{
@@ -66,7 +66,7 @@ public class PlayerListener implements Listener {
 			file.saveFile();
 		}
 	}
-	
+
 	@EventHandler
 	public void onPowerToolUse(PlayerInteractEvent e)
 	{
@@ -83,25 +83,25 @@ public class PlayerListener implements Listener {
 		data.run(e.getPlayer());
 		e.setCancelled(true);
 	}
-	
+
 	@EventHandler
 	public void onPlayerLeave(PlayerLeaveEvent e)
 	{
 		PowerToolAPI.unload(e.getPlayer().getUniqueId());
 	}
-	
+
 	@EventHandler
 	public void onPlayerQuit(PlayerQuitEvent e)
 	{
 		Bukkit.getPluginManager().callEvent(new PlayerLeaveEvent(e.getPlayer()));
 	}
-	
+
 	@EventHandler
 	public void onPlayerKick(PlayerKickEvent e)
 	{
 		Bukkit.getPluginManager().callEvent(new PlayerLeaveEvent(e.getPlayer()));
 	}
-	
+
 	@EventHandler
 	public void onPlayerJoin(PlayerJoinEvent e)
 	{
@@ -115,28 +115,28 @@ public class PlayerListener implements Listener {
 		{
 			Bukkit.getPluginManager().callEvent(new PlayerFirstJoinEvent(e));
 		}
-
+		file.loadFile();
+		file.set("last_join", System.currentTimeMillis());
+		file.saveFile();
+		
 		/**
 		 * The reason for this is because 1.7.5 is when the update to 
 		 * switch from UUID's came out, therefore anything below this needs to be
 		 * cancelled.
 		 */
-		if(Core.instance.getServer().getVersion().contains("1.7.2"))
-		{
-			IpAPI.logIp(e.getPlayer().getUniqueId(), IpAPI.getIp(e.getPlayer().getAddress()));
-			new UUIDManager(e.getPlayer().getUniqueId(), e.getPlayer().getName(),
-					UUIDManagementType.BOTH);
-		}
+		IpAPI.logIp(e.getPlayer().getUniqueId(), IpAPI.getIp(e.getPlayer().getAddress()));
+		new UUIDManager(e.getPlayer().getUniqueId(), e.getPlayer().getName(),
+				UUIDManagementType.BOTH);
 	}
-	
+
 	@EventHandler
 	public void onPrePlayerLogin(AsyncPlayerPreLoginEvent e)
 	{
-		 /*
-		  * The reason for this is because 1.7.5 is when the update to 
-		  * switch from UUID's came out, therefore anything below this 
-		  * needs to be cancelled.
-		  */
+		/*
+		 * The reason for this is because 1.7.5 is when the update to 
+		 * switch from UUID's came out, therefore anything below this 
+		 * needs to be cancelled.
+		 */
 		if(!(Core.instance.getServer().getVersion().contains("1.7.2")))
 		{
 			IpAPI.logIp(e.getUniqueId(), IpAPI.getIp(e.getAddress()));
@@ -144,9 +144,9 @@ public class PlayerListener implements Listener {
 					UUIDManagementType.BOTH);
 		}
 	}
-	
+
 	public static class ColorListener implements Listener {
-		
+
 		@EventHandler
 		public void onAsyncPlayerChat(AsyncPlayerChatEvent e)
 		{
@@ -155,22 +155,22 @@ public class PlayerListener implements Listener {
 				e.setMessage(MessageAPI.addColour(e.getMessage()));
 			}
 		}
-		
-	    @EventHandler
-	    public void onSignChange(SignChangeEvent e)
-	    {
-	    	if(Perm.COLOR_SIGN.hasPermission(e.getPlayer()))
-	    	{
-	    		int index = 0;
-	    		for(String str : e.getLines())
-	    		{
-	    			e.setLine(index, MessageAPI.addColour(str));
-	    			index++;
-	    		}
-	    	}
-	    }
-		
+
+		@EventHandler
+		public void onSignChange(SignChangeEvent e)
+		{
+			if(Perm.COLOR_SIGN.hasPermission(e.getPlayer()))
+			{
+				int index = 0;
+				for(String str : e.getLines())
+				{
+					e.setLine(index, MessageAPI.addColour(str));
+					index++;
+				}
+			}
+		}
+
 	}
-	
-	
+
+
 }

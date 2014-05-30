@@ -90,6 +90,12 @@ public class CheckGUI implements ExigenciesGUI {
 				sec + data.getLatestIp()
 				}
 				, Material.NAME_TAG, 1).getItem());
+		invent.addItem(new ItemStackCreator(pri + "Last Join", new String[]
+				{
+				sec + MessageAPI.getTimeLeftString(Math.abs((data.getLastJoin()
+						- System.currentTimeMillis()) / 1000)) + " ago" 
+				}
+				, Material.NAME_TAG, 1).getItem());
 		invent.addItem(new ItemStackCreator(pri + "Ticks Taken", new String[]
 				{
 				sec + (long) ((data.getSecondsTaken() == 0) ? 10 : data.getSecondsTaken())

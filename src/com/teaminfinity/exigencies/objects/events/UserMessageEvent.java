@@ -5,6 +5,8 @@ import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 
+import com.teaminfinity.exigencies.enums.ConfigVal;
+
 public class UserMessageEvent extends Event implements Cancellable {
 
 	private transient static final HandlerList handlers = new HandlerList();
@@ -21,6 +23,7 @@ public class UserMessageEvent extends Event implements Cancellable {
 		this.setSender(sender);
 		this.setReciever(reciever);
 		this.setMessage(message);
+		this.setSpy(ConfigVal.EXIGENCIES_LOGGER_MESSAGES_ENABLED.getBooleanValue());
 	}
 	
 	public HandlerList getHandlers() 

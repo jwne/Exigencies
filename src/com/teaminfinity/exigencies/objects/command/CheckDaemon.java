@@ -8,8 +8,9 @@ import java.util.UUID;
 import org.bukkit.entity.Player;
 
 import com.teaminfinity.exigencies.api.FileAPI;
-import com.teaminfinity.exigencies.api.IpAPI;
+import com.teaminfinity.exigencies.api.MessageAPI;
 import com.teaminfinity.exigencies.api.PlayerAPI;
+import com.teaminfinity.exigencies.enums.MessageVal;
 import com.teaminfinity.exigencies.gui.GUIHandler;
 import com.teaminfinity.exigencies.objects.BetterRunnable;
 import com.teaminfinity.exigencies.objects.F;
@@ -27,17 +28,34 @@ public class CheckDaemon implements BetterRunnable {
 	private transient String targetName;
 	private transient CheckResult result;
 	private transient int loops = 0;
+	private transient long lastJoin = -1;
 	
-	public CheckDaemon(UUID sender, Player target)
+	public CheckDaemon(UUID sender, String target)
 	{
 		this.result = new CheckResult();
-		this.result.addId(target.getUniqueId().toString());
-		this.result.addIp(IpAPI.getIp(target.getAddress()));
-		this.latestIp = this.result.getIps().get(0);
-		this.result.addName(target.getName().toLowerCase());
+		UUID id = PlayerAPI.getByName(target);
+		if(id == null)
+		{
+			PlayerAPI.getPlayer(sender).sendMessage(MessageAPI.getReformat(MessageVal.PLAYER_NOT_FOUND, target));
+			return;
+		}
+		this.result.addId(id.toString());
+		this.result.addName(target.toLowerCase());
 		this.sender = sender;
-		this.targetName = target.getName();
+		this.targetName = target;
 		this.playerfiles = new ArrayList<>();
+		
+		F file = FileAPI.getFileForPlayer(id);
+		file.loadFile();
+		for(String ip : file.getStringList("ips"))
+		{
+			this.result.addIp(ip);
+		}
+		for(String name : file.getStringList("used_names"))
+		{
+			this.result.addName(name);
+		}
+		
 		//Using exigencies files rather than offline players
 		//this is because the offlineplayer data
 		//will not necessarily be perfectly linked to
@@ -86,6 +104,18 @@ public class CheckDaemon implements BetterRunnable {
 					{
 						result.addIp(str);
 					}
+					if(playerFile.getLong("last_join") > lastJoin)
+					{
+						this.lastJoin = playerFile.getLong("last_join");
+						if(!(ips.size() == 0))
+						{
+							this.latestIp = ips.get(ips.size() - 1);
+						}
+						else
+						{
+							this.latestIp = "?";
+						}
+					}
 				}
 			}
 		}
@@ -107,7 +137,8 @@ public class CheckDaemon implements BetterRunnable {
 			//and just logs out.
 			return;
 		}
-		GUIHandler.getCheck().show(player, new CheckData(player, targetName, result, getSecondsTaken(), latestIp));
+		GUIHandler.getCheck().show(player, new CheckData(player, targetName, result, 
+				getSecondsTaken(), latestIp, lastJoin));
 	}
 	
 	private double getSecondsTaken()

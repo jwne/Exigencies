@@ -46,7 +46,7 @@ public class CommandCheck extends ExigenciesCommand implements CommandExecutor {
 			return false;
 		}
 		
-		new CheckDaemon(player.getUniqueId(), target);
+		new CheckDaemon(player.getUniqueId(), target.getName());
 		
 		return false;
 	}

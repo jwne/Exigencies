@@ -13,14 +13,20 @@ public abstract class FileAPI {
 
 	public static F getTemporaryDatabaseFile()
 	{
-		return new F(new File(Core.instance.getDataFolder() + "/plugindata/edit/with/caution"), 
-				"temporarydatabase");
+		return new F(getPluginDataDir(), "temporarydatabase");
 	}
 
 	public static File getEssentialsDir()
 	{
 		File exigencies = Core.instance.getDataFolder();
 		return new File(exigencies.getPath().replaceAll("Exigencies", "Essentials"));
+	}
+	
+	public static File getPluginDataDir()
+	{
+		File file = new File(Core.instance.getDataFolder() + "/plugindata/edit/with/caution");
+		file.mkdirs();
+		return file;
 	}
 
 	public static F getWarp(String name)
@@ -30,7 +36,7 @@ public abstract class FileAPI {
 
 	public static File getWarpDir()
 	{
-		return new File(Core.instance.getDataFolder() + "/warps");
+		return new File(getPluginDataDir() + "/warps");
 	}
 
 	public static F getJailFile(String name)
@@ -55,27 +61,27 @@ public abstract class FileAPI {
 
 	public static F getUUIDDatabaseFile()
 	{
-		return new F(new File(Core.instance.getDataFolder() + "/plugindata/edit/with/caution"), "uuiddatabase");
+		return new F(getPluginDataDir(), "uuiddatabase");
 	}
 
 	public static F getParticleEffectFile()
 	{
-		return new F(new File(Core.instance.getDataFolder() + "/plugindata/edit/with/caution"), "particleeffectdata");
+		return new F(getPluginDataDir(), "particleeffectdata");
 	}
 
 	public static F getJailedUserFile()
 	{
-		return new F(Core.instance.getDataFolder(), "jailedusers");
+		return new F(getPluginDataDir(), "jailedusers");
 	}
 
 	public static File getPlayerFileDir()
 	{
-		return new File(Core.instance.getDataFolder() + "/players");
+		return new File(getPluginDataDir() + "/players");
 	}
 
 	public static File getJailFileDir()
 	{
-		return new File(Core.instance.getDataFolder() + "/jails");
+		return new File(getPluginDataDir() + "/jails");
 	}
 
 	public static F getFileForPlayer(Player player)
